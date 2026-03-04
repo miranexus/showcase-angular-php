@@ -1,0 +1,66 @@
+@use 'variables' as vars;
+
+:host {
+  .step-item {
+    flex: 1 1 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    padding: 0; // Remove extra padding
+    min-height: 120px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .step-item button {
+    width: vars.$percent-50;
+    margin: 0;
+    min-width: vars.$padding-32;
+    max-width: vars.$percent-50;
+    white-space: nowrap;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .step-carousel {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  // Mobile adjustments
+  @media (max-width: 480px) {
+    .step-item {
+      padding: 0;
+      min-height: vars.$padding-80;
+    }
+
+    .step-item button {
+      width: 100%;
+      margin: 0;
+      min-width: unset;
+      max-width: 100%;
+      font-size: vars.$padding-15;
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .step-carousel {
+      padding: 0;
+      margin: 0;
+    }
+
+    // Remove extra space from carousel controls if needed
+    ::ng-deep .p-carousel .p-carousel-indicators {
+      margin-bottom: 0;
+    }
+
+    ::ng-deep .p-carousel .p-carousel-prev,
+    ::ng-deep .p-carousel .p-carousel-next {
+      left: 0;
+      right: 0;
+      margin: 0;
+      padding: 0 vars.$padding-02;
+    }
+  }
+}

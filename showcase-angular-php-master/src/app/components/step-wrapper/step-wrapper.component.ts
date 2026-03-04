@@ -1,9 +1,10 @@
 import { RouteIds } from '../../types';
 import { VALID_STEPS } from '../../constants';
 import { RouterOutlet } from '@angular/router';
-import { ButtonDirective } from 'primeng/button';
+import { CarouselModule } from 'primeng/carousel';
 import { Component, inject, Injectable } from '@angular/core';
 import { NavigationService, SignalsStoreService } from '../../services';
+import { CarouselPrimengComponent } from '../carousel-primeng/carousel-primeng.component';
 
 @Injectable({
   providedIn: 'root'
@@ -12,27 +13,44 @@ import { NavigationService, SignalsStoreService } from '../../services';
 @Component({
   standalone: true,
   selector: 'mnx-step-wrapper',
-  imports: [RouterOutlet, ButtonDirective],
+  imports: [RouterOutlet, CarouselModule, CarouselPrimengComponent],
   templateUrl: './step-wrapper.component.html',
   styleUrl: './step-wrapper.component.scss'
 })
 export class StepWrapperComponent {
   RouteIds = RouteIds;
 
+  steps = [
+    { id: RouteIds.pSelect, label: 'Dropdown', icon: 'pi pi-list' },
+    { id: RouteIds.pDialog, label: 'Dialog', icon: 'pi pi-comments' },
+    { id: RouteIds.pTable, label: 'Table', icon: 'pi pi-table' }
+  ];
+
   private navigationService = inject(NavigationService);
   private signalsStoreService = inject(SignalsStoreService);
+
+  get activeIndex() {
+    return this.steps.findIndex(s => s.id === this.signalsStoreService.getSelectedStep());
+  }
+
+  buttonClassFn = (step: any) => {
+    return {
+      'p-button-info': step.id === this.RouteIds.pSelect,
+      'p-button-success': step.id === this.RouteIds.pDialog,
+      'p-button-warning': step.id === this.RouteIds.pTable
+    };
+  };
+
+  onCarouselChange(event: any) {
+    const step = this.steps[event.page]?.id;
+    if (step) {
+      this.changeStep(step);
+    }
+  }
 
   changeStep(step: RouteIds) {
     if (VALID_STEPS?.includes(step)) {
       this.navigationService.navigateToStep(step);
-    }
-  }
-
-  navigateStep(direction: number) {
-    const steps = VALID_STEPS;
-    const index = steps?.indexOf(this.signalsStoreService.getSelectedStep() as RouteIds) + direction;
-    if (index >= 0 && index < steps?.length) {
-      this.navigationService.navigateToStep(steps[index]);
     }
   }
 }
