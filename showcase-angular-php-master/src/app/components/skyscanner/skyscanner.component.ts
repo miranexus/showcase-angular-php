@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { DirectionDropdownComponent } from '../direction-dropdown/direction-dropdown.component';
-import {BookingDropdownComponent} from '../booking-dropdown/booking-dropdown.component';
+import { DirectionDropdownComponent } from '../dropdown-direction/direction-dropdown.component';
+import {BookingDropdownComponent} from '../dropdown-booking/booking-dropdown.component';
 
 
 @Component({

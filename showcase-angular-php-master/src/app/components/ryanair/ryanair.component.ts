@@ -6,7 +6,7 @@ import { ButtonDirective } from 'primeng/button';
 import { EMPTY_SELECTED_CITIES } from '../../constants';
 import { Component, inject, OnInit } from '@angular/core';
 import { City, RouteIds, SelectedCities } from '../../types';
-import { DirectionRadioButtonsComponent } from '../direction-radio-buttons/direction-radio-buttons.component';
+import { DirectionRadioButtonsComponent } from '../radio-buttons-direction/direction-radio-buttons.component';
 import { NavigationService, SignalsStoreService } from '../../services';
 
 
