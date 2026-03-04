@@ -11,11 +11,34 @@ $padding-15: 15px;
 $padding-16: 16px;
 $padding-18: 18px;
 $padding-20: 20px;
+$padding-24: 24px;
 $padding-32: 32px;
 $padding-40: 40px;
 $padding-50: 50px;
 $padding-80: 80px;
+$padding-100: 100px;
+$padding-400: 400px;
+$padding-600: 600px;
+$padding-900: 900px;
+
+$percent-50: 50%;
 
 $breakpoint-sm: 700px;
 
-$percent-50: 50%;
+$color-text: #333;
+$color-blue: #3b82f6;
+$color-red: #ef4444;
+$color-white: #fff;
+$color-red-dark: #b91c1c;
+$color-blue-dark: #2563eb;
+$color-gray-input: #f9fafb;
+$color-gray-hover: #f5f7fa;
+$color-gray-light: #f8fafc;
+$color-gray-border: #f0f0f0;
+$color-gray-header: #e0e7ef;
+
+$border-radius-06: $padding-06;
+$border-radius-12: $padding-12;
+
+$box-shadow-btn: 0 $padding-01 $padding-04 rgba(59,130,246,0.08);
+$box-shadow-table: 0 $padding-02 $padding-12 rgba(0,0,0,0.08);
