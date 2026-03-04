@@ -1,0 +1,16 @@
+{
+  "name": "showcase-angular-php",
+  "version": "1.0.0",
+  "engines": {
+    "node": "22.16.0",
+    "npm": "10.9.2"
+  },
+  "scripts": {
+    "start": "node showcase-angular-php-master/api/server.js",
+    "build": "cd showcase-angular-php-master && npm install && npm run build",
+    "render-postbuild": "cp -r showcase-angular-php-master/dist/showcase-angular-php/browser/* showcase-angular-php-master/dist/showcase-angular-php/ || true"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
