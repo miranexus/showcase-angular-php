@@ -6,6 +6,7 @@ $padding-06: 6px;
 $padding-08: 8px;
 $padding-10: 10px;
 $padding-12: 12px;
+$padding-13: 13px;
 $padding-14: 14px;
 $padding-15: 15px;
 $padding-16: 16px;
@@ -14,6 +15,7 @@ $padding-20: 20px;
 $padding-24: 24px;
 $padding-32: 32px;
 $padding-40: 40px;
+$padding-48: 48px;
 $padding-50: 50px;
 $padding-80: 80px;
 $padding-100: 100px;
@@ -26,6 +28,16 @@ $padding-900: 900px;
 $percent-50: 50%;
 
 $breakpoint-sm: 700px;
+
+$font-size-17: 17px;
+$font-size-25: 25px;
+$font-size-30: 30px;
+$font-size-32: 32px;
+
+$icon-size-22: 22px;
+
+$max-width-420: 420px;
+$max-width-1200: 1200px;
 
 $color-text: #333;
 $color-blue: #3b82f6;
@@ -41,6 +53,7 @@ $color-gray-header: #e0e7ef;
 
 $border-radius-06: $padding-06;
 $border-radius-12: $padding-12;
+$border-radius-32: $padding-32;
 
 $box-shadow-btn: 0 $padding-01 $padding-04 rgba(59,130,246,0.08);
 $box-shadow-table: 0 $padding-02 $padding-12 rgba(0,0,0,0.08);
