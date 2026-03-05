@@ -20,7 +20,7 @@
     padding: vars.$padding-16;
     max-height: 50vh;
     background: vars.$color-white;
-    box-shadow: 0 -(vars.$padding-02) vars.$padding-08 rgba(0,0,0,0.05);
+    box-shadow: 0 (-(vars.$padding-02)) vars.$padding-08 rgba(0,0,0,0.05);
     flex-shrink: 0;
     justify-content: center;
   }
