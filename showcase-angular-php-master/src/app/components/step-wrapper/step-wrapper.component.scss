@@ -6,6 +6,11 @@
   overflow: hidden;
   flex-direction: column;
 
+  .step-header {
+    height: vars.$padding-40;
+    flex-shrink: 0;
+  }
+
   .scrollable-router-outlet {
     flex: 1;
     overflow-y: auto;
