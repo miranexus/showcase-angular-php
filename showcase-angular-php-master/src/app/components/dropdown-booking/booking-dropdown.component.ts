@@ -16,6 +16,7 @@ import { Component, ElementRef, inject, Input, ViewChild } from '@angular/core';
     FormsModule,
   ],
   templateUrl: './booking-dropdown.component.html',
+  standalone: true,
   styleUrl: './booking-dropdown.component.scss'
 })
 export class BookingDropdownComponent {

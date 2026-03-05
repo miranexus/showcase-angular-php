@@ -23,7 +23,8 @@ export class StepWrapperComponent {
   steps = [
     { id: RouteIds.pSelect, label: 'Dropdown', icon: 'pi pi-list' },
     { id: RouteIds.pDialog, label: 'Dialog', icon: 'pi pi-comments' },
-    { id: RouteIds.pTable, label: 'Table', icon: 'pi pi-table' }
+    { id: RouteIds.pTable, label: 'Table', icon: 'pi pi-table' },
+    { id: RouteIds.banner, label: 'Banner', icon: 'pi pi-image' }
   ];
 
   private navigationService = inject(NavigationService);
@@ -37,7 +38,8 @@ export class StepWrapperComponent {
     return {
       'p-button-info': step.id === this.RouteIds.pSelect,
       'p-button-success': step.id === this.RouteIds.pDialog,
-      'p-button-warning': step.id === this.RouteIds.pTable
+      'p-button-warning': step.id === this.RouteIds.pTable,
+      'p-button-help': step.id === this.RouteIds.banner
     };
   };
 
@@ -50,6 +52,7 @@ export class StepWrapperComponent {
 
   changeStep(step: RouteIds) {
     if (VALID_STEPS?.includes(step)) {
+      this.signalsStoreService.setSelectedStep(step);
       this.navigationService.navigateToStep(step);
     }
   }
