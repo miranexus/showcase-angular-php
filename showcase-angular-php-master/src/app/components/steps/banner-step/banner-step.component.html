@@ -1,8 +1,8 @@
 <div class="banner-step">
-  <p-carousel [value]="images" [numVisible]="1" [numScroll]="1" [circular]="true" [autoplayInterval]="3000">
+  <p-carousel [value]="currentImages" [numVisible]="1" [numScroll]="1" [circular]="true" [autoplayInterval]="3000">
     <ng-template pTemplate="item" let-image>
       <div class="aspect-ratio-box">
-        <img ngSrc="{{ image }}" alt="Banner Image" width="800" height="300" />
+        <img ngSrc="{{image}}" alt="Banner Image" width="800" height="300" />
       </div>
     </ng-template>
   </p-carousel>

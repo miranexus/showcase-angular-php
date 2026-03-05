@@ -16,8 +16,21 @@ import {PrimeTemplate} from 'primeng/api';
 })
 export class BannerStepComponent {
   images = [
-    '/angular/showcase-angular-php/assets/banner-images/vape_banner_one.png',
-    '/angular/showcase-angular-php/assets/banner-images/vape_banner_two.png',
-    '/angular/showcase-angular-php/assets/banner-images/vape_banner_three.png'
+    '/angular/showcase-angular-php/assets/desktop/banner-images/vape_banner_one_desktop.png',
+    '/angular/showcase-angular-php/assets/desktop/banner-images/vape_banner_two_desktop.png',
+    '/angular/showcase-angular-php/assets/desktop/banner-images/vape_banner_three_desktop.png'
   ];
+  mobileImages = [
+    '/angular/showcase-angular-php/assets/mobile/banner-images/vape_banner_one_mobile.png',
+    '/angular/showcase-angular-php/assets/mobile/banner-images/vape_banner_two_mobile.png',
+    '/angular/showcase-angular-php/assets/mobile/banner-images/vape_banner_three_mobile.png'
+  ];
+
+  get isMobile() {
+    return window.innerWidth <= 700;
+  }
+
+  get currentImages() {
+    return this.isMobile ? this.mobileImages : this.images;
+  }
 }
