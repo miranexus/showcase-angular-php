@@ -1,21 +1,17 @@
-import { Component, Injectable, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { NgOptimizedImage } from '@angular/common';
-import {Carousel} from 'primeng/carousel';
-import {PrimeTemplate} from 'primeng/api';
-
-@Injectable({
-  providedIn: 'root'
-})
+import { Carousel } from 'primeng/carousel';
+import { PrimeTemplate } from 'primeng/api';
 
 @Component({
   standalone: true,
-  selector: 'mnx-banner-step',
-  templateUrl: './banner-step.component.html',
-  styleUrls: ['./banner-step.component.scss'],
+  selector: 'mnx-carousel-banner',
+  templateUrl: './carousel-banner.component.html',
+  styleUrls: ['./carousel-banner.component.scss'],
   imports: [NgOptimizedImage, Carousel, PrimeTemplate],
   encapsulation: ViewEncapsulation.None
 })
-export class BannerStepComponent {
+export class CarouselBannerComponent {
   images = [
     '/angular/showcase-angular-php/assets/desktop/banner-images/vape_banner_one_desktop.png',
     '/angular/showcase-angular-php/assets/desktop/banner-images/vape_banner_two_desktop.png',
@@ -35,3 +31,4 @@ export class BannerStepComponent {
     return this.isMobile ? this.mobileImages : this.images;
   }
 }
+

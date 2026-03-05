@@ -1,7 +1,7 @@
 import { Observable } from 'rxjs';
 import { RouteIds, Step } from '../types';
 import { inject, Injectable } from '@angular/core';
-import { BannerStepStrategy, PSelectStepStrategy, PDialogStepStrategy, PTableStepStrategy, StepStrategy } from './step-strategies';
+import { EcommerceStepStrategy, PSelectStepStrategy, PDialogStepStrategy, PTableStepStrategy, StepStrategy } from './step-strategies';
 
 @Injectable({
   providedIn: 'root',
@@ -12,14 +12,14 @@ export class StepResolverService {
   private pTableStepStrategy= inject(PTableStepStrategy);
   private pDialogStepStrategy = inject(PDialogStepStrategy);
   private pSelectStepStrategy = inject(PSelectStepStrategy);
-  private bannerStepStrategy = inject(BannerStepStrategy);
+  private ecommerceStepStrategy = inject(EcommerceStepStrategy);
 
   constructor() {
     this.strategies = {
       pSelect: this.pSelectStepStrategy,
       pDialog: this.pDialogStepStrategy,
       pTable: this.pTableStepStrategy,
-      banner: this.bannerStepStrategy,
+      ecommerce: this.ecommerceStepStrategy,
     };
   }
 

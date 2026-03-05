@@ -24,7 +24,7 @@ export class StepWrapperComponent {
     { id: RouteIds.pSelect, label: 'Dropdown', icon: 'pi pi-list' },
     { id: RouteIds.pDialog, label: 'Dialog', icon: 'pi pi-comments' },
     { id: RouteIds.pTable, label: 'Table', icon: 'pi pi-table' },
-    { id: RouteIds.banner, label: 'Banner', icon: 'pi pi-image' }
+    { id: RouteIds.ecommerce, label: 'Ecommerce', icon: 'pi pi-image' }
   ];
 
   private navigationService = inject(NavigationService);
@@ -39,7 +39,7 @@ export class StepWrapperComponent {
       'p-button-info': step.id === this.RouteIds.pSelect,
       'p-button-success': step.id === this.RouteIds.pDialog,
       'p-button-warning': step.id === this.RouteIds.pTable,
-      'p-button-help': step.id === this.RouteIds.banner
+      'p-button-help': step.id === this.RouteIds.ecommerce
     };
   };
 

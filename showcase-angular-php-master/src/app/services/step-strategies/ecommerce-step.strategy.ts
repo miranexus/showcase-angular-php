@@ -5,10 +5,10 @@ import { RouteIds, Step } from '../../types';
 @Injectable({
   providedIn: 'root',
 })
-export class BannerStepStrategy implements StepStrategy {
+export class EcommerceStepStrategy implements StepStrategy {
   private stepDefinition: Step = {
-    id: RouteIds.banner,
-    title: 'Banner Step'
+    id: RouteIds.ecommerce,
+    title: 'Ecommerce Step'
   };
 
   getStepDefinition() {

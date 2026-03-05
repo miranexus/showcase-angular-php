@@ -1,10 +1,16 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
+  RewriteBase /angular/showcase-angular-php/
+
   # If the requested file or directory exists, serve it
   RewriteCond %{REQUEST_FILENAME} -f [OR]
   RewriteCond %{REQUEST_FILENAME} -d
   RewriteRule ^ - [L]
-  # Otherwise, serve index.html
+
+  # Skip rewrite for php-api requests
+  RewriteRule ^php-api/ - [L]
+
+  # Otherwise, rewrite to index.html for Angular client-side routing
   RewriteRule ^ index.html [L]
 </IfModule>
 

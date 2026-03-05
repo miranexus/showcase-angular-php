@@ -3,7 +3,7 @@ import { AppComponent } from './app.component';
 import { pTableStepRoute } from './components/steps/p-table-step/p-table-step.definition';
 import { pDialogStepRoute } from './components/steps/p-dialog-step/p-dialog-step.definition';
 import { pSelectStepRoute } from './components/steps/p-select-step/p-select-step.definition';
-import { bannerStepRoute } from './components/steps/banner-step/banner-step.definition';
+import { ecommerceStepRoute } from './components/steps/ecommerce-step/ecommerce-step.definition';
 
 export const routes: Routes = [] = [
   {
@@ -13,5 +13,5 @@ export const routes: Routes = [] = [
   pSelectStepRoute,
   pDialogStepRoute,
   pTableStepRoute,
-  bannerStepRoute
+  ecommerceStepRoute
 ]
