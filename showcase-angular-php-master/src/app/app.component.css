@@ -1,0 +1,17 @@
+:host {
+  height: 100vh;
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+}
+
+h1 {
+  margin: 0;
+  padding: 16px;
+  flex-shrink: 0;
+}
+
+mnx-step-wrapper {
+  flex: 1;
+  min-height: 0;
+}
