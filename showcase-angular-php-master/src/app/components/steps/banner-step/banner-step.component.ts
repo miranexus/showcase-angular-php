@@ -1,4 +1,4 @@
-import { Component, Injectable } from '@angular/core';
+import { Component, Injectable, ViewEncapsulation } from '@angular/core';
 import { NgOptimizedImage } from '@angular/common';
 import {Carousel} from 'primeng/carousel';
 import {PrimeTemplate} from 'primeng/api';
@@ -12,7 +12,8 @@ import {PrimeTemplate} from 'primeng/api';
   selector: 'mnx-banner-step',
   templateUrl: './banner-step.component.html',
   styleUrls: ['./banner-step.component.scss'],
-  imports: [NgOptimizedImage, Carousel, PrimeTemplate]
+  imports: [NgOptimizedImage, Carousel, PrimeTemplate],
+  encapsulation: ViewEncapsulation.None
 })
 export class BannerStepComponent {
   images = [
