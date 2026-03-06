@@ -1,10 +1,14 @@
 @use 'variables' as *;
 
+// Branding and layout variables scoped to toolbar-header
+$color-brand: #525777;  ;
+
 $focus-ring: 0 0 0 $padding-04 rgba(196, 181, 253, 0.2), 0 0 $padding-10 rgba(224, 212, 252, 0.15);
 $shadow-hover: drop-shadow(0 0 $padding-05 rgba(196, 181, 253, 0.5));
 $shadow-subtle: drop-shadow(0 0 $padding-02 rgba(196, 181, 253, 0.3));
 $gradient-brand: linear-gradient(135deg, #c4b5fd, #e0d4fc);
 $gradient-border: linear-gradient(135deg, #9388be, #a89fbd);
+
 
 @mixin gradient-text {
   background: $gradient-brand;
@@ -129,15 +133,14 @@ mnx-toolbar-header {
 
     .search-icon {
       top: $percent-50;
-      color: #525777;
+      color: $color-brand;
       z-index: 1;
       position: absolute;
       font-size: $font-size-17;
       transform: translateY(-$percent-50);
-      padding-top: $padding-02;
       pointer-events: none;
       inset-inline-start: $padding-20;
-      -webkit-text-stroke: $padding-01 #525777;
+      -webkit-text-stroke: $padding-01 $color-brand;
     }
 
     input.p-inputtext.p-inputtext {
