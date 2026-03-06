@@ -44,9 +44,12 @@ mnx-toolbar-header {
   .p-toolbar {
     width: 100%;
     display: flex;
+    border: none;
     max-width: 100%;
+    box-shadow: none;
     background: linear-gradient(180deg, #2e3354, #1e2240);
     align-items: center;
+    border-radius: 0;
     padding-inline: max($padding-16, calc((100% - $max-width-1200) / 2));
     justify-content: center;
   }
