@@ -37,8 +37,8 @@ mnx-toolbar-header {
   width: 100vw;
   display: block;
   position: relative;
-  inset-inline-start: $percent-50;
   transform: translateX(-$percent-50);
+  inset-inline-start: $percent-50;
 
   .p-toolbar {
     width: 100%;
@@ -81,15 +81,15 @@ mnx-toolbar-header {
     align-items: center;
 
     i {
-      font-size: $font-size-30;
+      font-size: $font-size-35;
       @include gradient-text;
       @include icon-hover-effect;
     }
 
     span {
-      font-weight: 700;
-      font-size: $font-size-25;
-      letter-spacing: 0.05em;
+      font-weight: 900;
+      font-size: $font-size-31;
+      letter-spacing: 0.08em;
       @include gradient-text;
     }
 
@@ -101,13 +101,20 @@ mnx-toolbar-header {
   // ── Search bar ──
   .search-bar {
     width: 100%;
+    filter: $shadow-subtle;
     position: relative;
     max-width: $max-width-420;
+    transition: filter 0.3s ease, transform 0.3s ease;
+
+    &:hover,
+    &:focus-within {
+      filter: $shadow-hover;
+      transform: scale(1.03);
+    }
 
     .search-icon {
       top: $percent-50;
       width: $icon-size-22;
-      filter: $shadow-subtle;
       height: $icon-size-22;
       display: block;
       z-index: 1;
@@ -119,10 +126,10 @@ mnx-toolbar-header {
       inset-inline-start: $padding-14;
     }
 
-    .p-inputtext {
+    input.p-inputtext.p-inputtext {
       width: 100%;
       color: var(--p-text-color);
-      border: $padding-02 solid transparent;
+      border: $padding-03 solid transparent;
       font-size: $font-size-17;
       transition: box-shadow 0.3s ease, background 0.3s ease;
       background:
@@ -130,15 +137,23 @@ mnx-toolbar-header {
         $gradient-brand border-box;
       font-weight: 600;
       border-radius: $border-radius-32;
-      padding-block: $padding-13;
-      padding-inline-start: $padding-48;
+      padding-block: $padding-12;
       padding-inline-end: $padding-20;
+      padding-inline-start: $padding-48;
+      --p-focus-ring-color: transparent;
+      --p-inputtext-focus-ring-color: transparent;
+      --p-inputtext-focus-ring-shadow: none;
+      --p-inputtext-focus-border-color: transparent;
 
-      &:focus {
+      &:focus,
+      &:enabled:focus,
+      &:focus-visible {
+        outline: transparent none;
         background:
           linear-gradient(var(--p-surface-0), var(--p-surface-0)) padding-box,
           $gradient-brand border-box;
-        box-shadow: $focus-ring;
+        box-shadow: none;
+        border-color: transparent;
       }
 
       &::placeholder {
