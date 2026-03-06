@@ -7,7 +7,7 @@ mnx-carousel-banner {
   .carousel-banner {
     width: 100%;
     overflow: hidden;
-    border-radius: 0 0 $border-radius-12 $border-radius-12;
+    border-radius: 0; // Remove all border radius from the carousel container
 
     p-carousel {
       width: 100%;
@@ -39,6 +39,7 @@ mnx-carousel-banner {
         height: auto;
         display: block;
         object-fit: contain;
+        border-radius: 0;
       }
     }
 
@@ -77,4 +78,3 @@ mnx-carousel-banner {
     line-height: 1.6;
   }
 }
-
