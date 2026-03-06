@@ -1,0 +1,13 @@
+<p-carousel
+  [value]="cards"
+  [numVisible]="4"
+  [numScroll]="1"
+  [circular]="true"
+  [autoplayInterval]="4000"
+  [responsiveOptions]="responsiveOptions"
+  styleClass="product-carousel"
+>
+  <ng-template pTemplate="item" let-card>
+    <mnx-card-product [image]="card.image" [title]="card.title" [description]="card.description"></mnx-card-product>
+  </ng-template>
+</p-carousel>

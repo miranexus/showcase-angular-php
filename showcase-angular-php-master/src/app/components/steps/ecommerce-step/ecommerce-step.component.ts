@@ -1,7 +1,7 @@
 import { Component, Injectable, ViewEncapsulation } from '@angular/core';
 import { CarouselBannerComponent } from '../../carousel-banner/carousel-banner.component';
 import { ToolbarHeaderComponent } from '../../toolbar-header/toolbar-header.component';
-import {CardProductComponent} from '../../card-product/card-product.component';
+import { CardProductContainerComponent } from '../../card-product-container/card-product-container.component';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +12,7 @@ import {CardProductComponent} from '../../card-product/card-product.component';
   selector: 'mnx-ecommerce-step',
   templateUrl: './ecommerce-step.component.html',
   styleUrls: ['./ecommerce-step.component.scss'],
-  imports: [CarouselBannerComponent, ToolbarHeaderComponent, CardProductComponent],
+  imports: [CarouselBannerComponent, ToolbarHeaderComponent, CardProductContainerComponent],
   encapsulation: ViewEncapsulation.None
 })
 export class EcommerceStepComponent {

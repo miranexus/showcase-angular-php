@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 import { Card } from 'primeng/card';
 import {PrimeTemplate} from 'primeng/api';
 import {NgIf, NgOptimizedImage} from '@angular/common';
@@ -14,7 +14,7 @@ import {FormsModule} from '@angular/forms';
   imports: [Card, PrimeTemplate, NgIf, Rating, NgOptimizedImage, ButtonDirective, FormsModule]
 })
 export class CardProductComponent {
-  image: string = 'assets/both/card-images/vape_card_01.png'; // Default image path
-  title: string = 'Vape Card 01';
-  description: string = 'Description for this product.';
+  @Input() image!: string;
+  @Input() title!: string;
+  @Input() description!: string;
 }
