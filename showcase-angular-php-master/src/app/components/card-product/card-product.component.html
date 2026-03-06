@@ -1,0 +1,25 @@
+<p-card>
+  <ng-template pTemplate="header">
+    <div class="card-product-image-wrapper">
+      <img
+        *ngIf="image"
+        class="card-product-image"
+        width="200"
+        height="200"
+        alt="{{title}}"
+        [ngSrc]="image"
+      />
+    </div>
+  </ng-template>
+  <div class="product-title">{{ title }}</div>
+  <div class="product-description">{{ description }}</div>
+  <div class="product-review-stars">
+    <p-rating
+      class="product-rating"
+      [stars]="5"
+      [ngModel]="4"
+      [readonly]="true"
+    ></p-rating>
+  </div>
+  <button pButton type="button" class="add-to-cart-btn">Add to cart</button>
+</p-card>

@@ -1,0 +1,73 @@
+@use 'variables' as *;
+
+$product-card-img-size: $padding-200;
+$product-card-width: $product-card-img-size;
+$product-card-height: $padding-400;
+$product-card-box-shadow: 0 $padding-02 $padding-08 rgba(0,0,0,0.04);
+
+.product-title {
+  text-align: center;
+  font-weight: bold;
+  font-size: $font-size-19;
+  margin-bottom: $padding-08;
+}
+
+.product-description {
+  color: $color-gray-700;
+  font-size: $font-size-17;
+  text-align: center;
+}
+
+.card-product-image-wrapper {
+  width: $product-card-img-size;
+  height: $product-card-img-size;
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+}
+
+:host ::ng-deep .p-card {
+  width: $product-card-width;
+  height: $product-card-height;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.card-product-image {
+  width: $product-card-img-size;
+  height: $product-card-img-size;
+  margin: 0 auto;
+  display: block;
+  object-fit: cover;
+}
+
+.product-review-stars {
+  display: flex;
+  align-items: center;
+  margin-top: $padding-08;
+  justify-content: center;
+}
+
+.add-to-cart-btn {
+  color: $color-white;
+  width: 100%;
+  border: none;
+  margin: $padding-16 0 0 0;
+  font-weight: 600;
+  font-size: $font-size-17;
+  box-shadow: $product-card-box-shadow;
+  transition: background 0.2s;
+  background: $color-blue-dark;
+  border-radius: $border-radius-06;
+  &:hover,
+  &:focus {
+    color: $color-white;
+    background: $color-blue;
+  }
+}
