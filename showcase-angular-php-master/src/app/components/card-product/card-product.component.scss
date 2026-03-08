@@ -6,9 +6,9 @@ $product-card-height: $padding-400;
 $product-card-box-shadow: 0 $padding-02 $padding-08 rgba(0,0,0,0.04);
 
 .product-title {
+  font-size: $font-size-19;
   text-align: center;
   font-weight: bold;
-  font-size: $font-size-19;
   margin-bottom: $padding-08;
 }
 
@@ -59,11 +59,11 @@ $product-card-box-shadow: 0 $padding-02 $padding-08 rgba(0,0,0,0.04);
   width: 100%;
   border: none;
   margin: $padding-16 0 0 0;
-  font-weight: 600;
   font-size: $font-size-17;
   box-shadow: $product-card-box-shadow;
   transition: background 0.2s;
   background: $color-blue-dark;
+  font-weight: 600;
   border-radius: $border-radius-06;
   &:hover,
   &:focus {
