@@ -1,17 +1,19 @@
-@use 'variables' as vars;
+@use 'variables' as *;
+
+$box-shadow-table: 0 2px 8px rgba(0,0,0,0.08);
 
 :host {
   .table {
     width: unset;
     right: unset;
-    margin: vars.$padding-24 auto;
+    margin: $padding-24 auto;
     z-index: unset;
     overflow: hidden;
-    max-width: vars.$padding-900;
-    background: vars.$color-white;
-    box-shadow: vars.$box-shadow-table;
-    border-radius: vars.$border-radius-12;
-    padding-bottom: vars.$padding-32;
+    max-width: $padding-900;
+    background: $color-white;
+    box-shadow: $box-shadow-table;
+    border-radius: $border-radius-12;
+    padding-bottom: $padding-32;
 
     // Add a scrollable wrapper for the table
     .table__scroll-wrapper {
@@ -19,7 +21,7 @@
       width: 100%;
       display: block;
       min-width: unset;
-      max-height: vars.$padding-400;
+      max-height: $padding-400;
       overflow-x: auto;
       overflow-y: auto;
     }
@@ -27,8 +29,8 @@
     .p-table {
       gap: unset;
       width: 100%;
-      font-size: vars.$padding-16;
-      min-width: vars.$padding-600;
+      font-size: $padding-16;
+      min-width: $padding-600;
       background: transparent;
       font-family: 'Segoe UI', Arial, sans-serif;
       border-spacing: 0;
@@ -38,25 +40,25 @@
     &__cell {
       gap: unset;
       width: unset;
-      padding: vars.$padding-12;
+      padding: $padding-12;
       min-width: unset;
       transition: background 0.2s;
       vertical-align: middle;
-      border-bottom: vars.$padding-01 solid vars.$color-gray-border;
+      border-bottom: $padding-01 solid $color-gray-border;
     }
 
     th.table__cell {
       top: 0;
       gap: unset;
       width: unset;
-      color: vars.$color-text;
+      color: $color-text;
       z-index: 2;
       position: sticky;
       min-width: unset;
-      background: vars.$color-gray-light;
+      background: $color-gray-light;
       font-weight: 600;
       text-align: start;
-      border-bottom: vars.$padding-02 solid vars.$color-gray-header;
+      border-bottom: $padding-02 solid $color-gray-header;
     }
 
     tr {
@@ -65,67 +67,67 @@
       min-width: unset;
       transition: background 0.2s;
       &:hover {
-        background: vars.$color-gray-hover;
+        background: $color-gray-hover;
       }
     }
 
     input {
       gap: unset;
       width: 100%;
-      border: vars.$padding-01 solid #d1d5db;
+      border: $padding-01 solid #d1d5db;
       outline: none;
-      padding: vars.$padding-06 vars.$padding-10;
+      padding: $padding-06 $padding-10;
       min-width: unset;
-      font-size: vars.$padding-16;
-      background: vars.$color-gray-input;
+      font-size: $padding-16;
+      background: $color-gray-input;
       transition: border 0.2s;
-      border-radius: vars.$border-radius-06;
+      border-radius: $border-radius-06;
       &:focus {
         outline: none;
-        background: vars.$color-white;
-        border-color: vars.$color-blue;
+        background: $color-white;
+        border-color: $color-blue;
       }
     }
 
     button {
       gap: unset;
-      width: vars.$padding-100;
-      color: vars.$color-white;
+      width: $padding-100;
+      color: $color-white;
       border: none;
       outline: unset;
       cursor: pointer;
-      padding: vars.$padding-06 vars.$padding-16;
-      min-width: vars.$padding-80;
+      padding: $padding-06 $padding-16;
+      min-width: $padding-80;
       transition: background 0.2s, box-shadow 0.2s;
-      background: vars.$color-blue;
-      box-shadow: vars.$box-shadow-btn;
+      background: $color-blue;
+      box-shadow: $box-shadow-btn;
       font-weight: 500;
-      border-radius: vars.$border-radius-06;
-      margin-inline-end: vars.$padding-06;
+      border-radius: $border-radius-06;
+      margin-inline-end: $padding-06;
       &:hover {
-        background: vars.$color-blue-dark;
+        background: $color-blue-dark;
       }
       &:last-child {
-        background: vars.$color-red;
+        background: $color-red;
         margin-inline-end: 0;
         &:hover {
-          background: vars.$color-red-dark;
+          background: $color-red-dark;
         }
       }
     }
 
-    @media (max-width: vars.$padding-600) {
+    @media (max-width: $padding-600) {
       button {
         gap: unset;
         width: 100%;
-        padding: vars.$padding-06 0;
+        padding: $padding-06 0;
         min-width: 0;
         margin-bottom: 0;
-        margin-inline-end: vars.$padding-05;
+        margin-inline-end: $padding-05;
       }
 
       .table__cell {
-        gap: vars.$padding-05;
+        gap: $padding-05;
         width: unset;
         display: flex;
         align-items: center;
