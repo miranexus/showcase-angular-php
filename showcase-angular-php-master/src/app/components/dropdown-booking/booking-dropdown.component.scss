@@ -7,8 +7,13 @@ $overlay-arrow-bottom-margin: 2px;
 
 @mixin overlay-panel($flipped: false) {
   position: relative;
-  margin-top: if($flipped, 0, $overlay-arrow-offset);
-  margin-bottom: if($flipped, $overlay-arrow-offset, 0);
+  @if $flipped {
+    margin-top: 0;
+    margin-bottom: $overlay-arrow-offset;
+  } @else {
+    margin-top: $overlay-arrow-offset;
+    margin-bottom: 0;
+  }
   &::before {
     left: 50%;
     content: "";
