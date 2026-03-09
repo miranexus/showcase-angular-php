@@ -5,6 +5,9 @@ $product-card-width: $product-card-img-size;
 $product-card-height: $padding-400;
 $product-card-box-shadow: 0 $padding-02 $padding-08 rgba(0,0,0,0.04);
 
+$product-card-mobile-height: $padding-300;
+$product-card-mobile-img-height: $padding-140;
+
 .product-title {
   font-size: $font-size-19;
   text-align: center;
@@ -69,5 +72,73 @@ $product-card-box-shadow: 0 $padding-02 $padding-08 rgba(0,0,0,0.04);
   &:focus {
     color: $color-white;
     background: $color-blue;
+  }
+}
+
+@media (max-width: 600px) {
+  :host ::ng-deep .p-card {
+    height: $product-card-mobile-height;
+    padding: $padding-08;
+    display: flex;
+    box-sizing: border-box;
+    min-height: 0;
+    max-height: 100vw;
+    align-items: stretch;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .card-product-image-wrapper {
+    width: 100%;
+    height: $product-card-mobile-img-height;
+    display: flex;
+    max-width: 100%;
+    align-items: center;
+    margin-bottom: $padding-08;
+    justify-content: center;
+  }
+
+  .card-product-image {
+    height: 100%;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+  }
+  .product-title {
+    overflow: hidden;
+    font-size: $font-size-17;
+    max-height: $padding-32;
+    text-align: center;
+    font-weight: 600;
+    white-space: nowrap;
+    margin-bottom: $padding-04;
+    text-overflow: ellipsis;
+  }
+
+  .product-description {
+    overflow: hidden;
+    font-size: $font-size-14;
+    min-height: $padding-21;
+    max-height: $padding-32;
+    text-align: center;
+    word-break: break-word;
+    line-height: 1.15;
+    white-space: nowrap;
+    margin-bottom: $padding-04;
+    text-overflow: ellipsis;
+  }
+
+  .product-review-stars {
+    margin-bottom: $padding-08;
+  }
+
+  .add-to-cart-btn {
+    width: 100%;
+    margin: $padding-04 0 0 0;
+    padding: $padding-04 $padding-08;
+    font-size: $font-size-14;
+    box-sizing: border-box;
+    align-self: center;
+    min-height: $padding-32;
   }
 }
