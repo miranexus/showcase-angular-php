@@ -2,10 +2,10 @@
 
 $product-card-img-size: $padding-200;
 $product-card-width: $product-card-img-size;
-$product-card-height: $padding-400;
+$product-card-height: $padding-390;
 $product-card-box-shadow: 0 $padding-02 $padding-08 rgba(0,0,0,0.04);
 
-$product-card-mobile-height: $padding-300;
+$product-card-mobile-height: $padding-305;
 $product-card-mobile-img-height: $padding-165;
 
 .product-title {
@@ -40,6 +40,10 @@ $product-card-mobile-img-height: $padding-165;
   align-items: center;
   flex-direction: column;
   justify-content: flex-start;
+}
+
+:host ::ng-deep .p-card-body {
+  padding: 0;
 }
 
 .card-product-image {
@@ -85,10 +89,6 @@ $product-card-mobile-img-height: $padding-165;
     max-height: 100vw;
     align-items: stretch;
     flex-direction: column;
-  }
-
-  :host ::ng-deep .p-card-body {
-    padding: 0;
   }
 
   .card-product-image-wrapper {
