@@ -13,14 +13,14 @@ import { PrimeTemplate } from 'primeng/api';
 })
 export class CarouselBannerComponent {
   images = [
-    '/angular/showcase-angular-php/assets/desktop/banner-images/vape_banner_01_desktop.png',
-    '/angular/showcase-angular-php/assets/desktop/banner-images/vape_banner_02_desktop.png',
-    '/angular/showcase-angular-php/assets/desktop/banner-images/vape_banner_03_desktop.png'
+    '/angular/showcase-angular-php/assets/desktop/banner-images/perfume_banner_01_desktop.png',
+    '/angular/showcase-angular-php/assets/desktop/banner-images/perfume_banner_02_desktop.png',
+    '/angular/showcase-angular-php/assets/desktop/banner-images/perfume_banner_03_desktop.png'
   ];
   mobileImages = [
-    '/angular/showcase-angular-php/assets/mobile/banner-images/vape_banner_01_mobile.png',
-    '/angular/showcase-angular-php/assets/mobile/banner-images/vape_banner_02_mobile.png',
-    '/angular/showcase-angular-php/assets/mobile/banner-images/vape_banner_03_mobile.png'
+    '/angular/showcase-angular-php/assets/mobile/banner-images/perfume_banner_01_mobile.png',
+    '/angular/showcase-angular-php/assets/mobile/banner-images/perfume_banner_02_mobile.png',
+    '/angular/showcase-angular-php/assets/mobile/banner-images/perfume_banner_03_mobile.png'
   ];
 
   get isMobile() {
@@ -31,4 +31,3 @@ export class CarouselBannerComponent {
     return this.isMobile ? this.mobileImages : this.images;
   }
 }
-
