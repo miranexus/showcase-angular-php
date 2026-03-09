@@ -6,7 +6,7 @@ $product-card-height: $padding-400;
 $product-card-box-shadow: 0 $padding-02 $padding-08 rgba(0,0,0,0.04);
 
 $product-card-mobile-height: $padding-300;
-$product-card-mobile-img-height: $padding-140;
+$product-card-mobile-img-height: $padding-165;
 
 .product-title {
   font-size: $font-size-19;
@@ -85,7 +85,10 @@ $product-card-mobile-img-height: $padding-140;
     max-height: 100vw;
     align-items: stretch;
     flex-direction: column;
-    justify-content: space-between;
+  }
+
+  :host ::ng-deep .p-card-body {
+    padding: 0;
   }
 
   .card-product-image-wrapper {
@@ -129,6 +132,7 @@ $product-card-mobile-img-height: $padding-140;
   }
 
   .product-review-stars {
+    margin-top: 0;
     margin-bottom: $padding-08;
   }
 
