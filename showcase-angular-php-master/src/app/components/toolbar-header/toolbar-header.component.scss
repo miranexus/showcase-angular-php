@@ -1,14 +1,11 @@
 @use 'variables' as *;
 
-// Branding and layout variables scoped to toolbar-header
-$color-brand: #525777;  ;
-
+$color-brand: #525777;
 $focus-ring: 0 0 0 $padding-04 rgba(196, 181, 253, 0.2), 0 0 $padding-10 rgba(224, 212, 252, 0.15);
 $shadow-hover: drop-shadow(0 0 $padding-05 rgba(196, 181, 253, 0.5));
 $shadow-subtle: drop-shadow(0 0 $padding-02 rgba(196, 181, 253, 0.3));
 $gradient-brand: linear-gradient(135deg, #c4b5fd, #e0d4fc);
 $gradient-border: linear-gradient(135deg, #9388be, #a89fbd);
-
 
 @mixin gradient-text {
   background: $gradient-brand;
@@ -108,7 +105,7 @@ mnx-toolbar-header {
 
     span {
       font-weight: 900;
-      font-size: $font-size-31;
+      font-size: 28px;
       letter-spacing: 0.08em;
       @include gradient-text;
     }
@@ -122,7 +119,7 @@ mnx-toolbar-header {
     width: 100%;
     filter: $shadow-subtle;
     position: relative;
-    max-width: $max-width-420;
+    max-width: $padding-315;
     transition: filter 0.3s ease, transform 0.3s ease;
 
     &:hover,
@@ -136,10 +133,10 @@ mnx-toolbar-header {
       color: $color-brand;
       z-index: 1;
       position: absolute;
-      font-size: $font-size-17;
+      font-size: $font-size-13;
       transform: translateY(-$percent-50);
       pointer-events: none;
-      inset-inline-start: $padding-20;
+      inset-inline-start: $padding-14;
       -webkit-text-stroke: $padding-01 $color-brand;
     }
 
@@ -147,16 +144,16 @@ mnx-toolbar-header {
       width: 100%;
       color: color-mix(in srgb, var(--p-text-color) 120%, #000 20%);
       border: $padding-03 solid transparent;
-      font-size: $font-size-17;
+      font-size: $font-size-13;
       transition: box-shadow 0.3s ease, background 0.3s ease;
       background:
         linear-gradient(#faf9fd, #f7f7fb) padding-box,
         $gradient-border border-box;
       font-weight: 600;
       border-radius: $border-radius-32;
-      padding-block: $padding-12;
-      padding-inline-end: $padding-20;
-      padding-inline-start: $padding-48;
+      padding-block: $padding-09;
+      padding-inline-end: $padding-14;
+      padding-inline-start: $padding-32;
       --p-focus-ring-color: transparent;
       --p-inputtext-focus-ring-color: transparent;
       --p-inputtext-focus-ring-shadow: none;

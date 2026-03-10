@@ -65,6 +65,8 @@ $product-card-mobile-img-height: $padding-165;
   margin: 0 auto;
   display: block;
   object-fit: cover;
+  border-top-left-radius: $border-radius-06;
+  border-top-right-radius: $border-radius-06;
 }
 
 .product-review-stars {
@@ -123,6 +125,8 @@ $product-card-mobile-img-height: $padding-165;
     width: auto;
     max-width: 100%;
     object-fit: contain;
+    border-top-left-radius: $border-radius-06;
+    border-top-right-radius: $border-radius-06;
   }
   .product-title {
     overflow: hidden;
