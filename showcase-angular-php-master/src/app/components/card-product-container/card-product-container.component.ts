@@ -11,13 +11,13 @@ import { CardProductComponent } from '../card-product/card-product.component';
 })
 export class CardProductContainerComponent {
   images = [
-    'assets/both/card-images/perfume_card_01.png',
-    'assets/both/card-images/perfume_card_02.png',
-    'assets/both/card-images/perfume_card_03.png',
-    'assets/both/card-images/perfume_card_04.png',
-    'assets/both/card-images/perfume_card_05.png',
-    'assets/both/card-images/perfume_card_06.png',
-    'assets/both/card-images/perfume_card_07.png',
+    'assets/both/card-images/perfume_card_ad_01.png',
+    'assets/both/card-images/perfume_card_ad_02.png',
+    'assets/both/card-images/perfume_card_ad_03.png',
+    'assets/both/card-images/perfume_card_ad_04.png',
+    'assets/both/card-images/perfume_card_ad_05.png',
+    'assets/both/card-images/perfume_card_ad_06.png',
+    'assets/both/card-images/perfume_card_ad_07.png',
   ];
 
   cards = this.images.map((img, i) => ({
