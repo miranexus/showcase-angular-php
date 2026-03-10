@@ -10,8 +10,11 @@
   # Skip rewrite for php-api requests
   RewriteRule ^php-api/ - [L]
 
+  # Prevent infinite loop for index.html
+  RewriteRule ^index\.html$ - [L]
+
   # Otherwise, rewrite to index.html for Angular client-side routing
-  RewriteRule ^ index.html [L]
+  RewriteRule . /angular/showcase-angular-php/index.html [L]
 </IfModule>
 # Ensure 404s serve index.html for Angular routes
 ErrorDocument 404 /angular/showcase-angular-php/index.html
