@@ -14,3 +14,31 @@ mnx-ecommerce-step {
   width: 100%;
   display: block;
 }
+
+.collection-title {
+  margin: 40px 0 16px 0;
+  font-size: 2rem;
+  text-align: center;
+  font-weight: 700;
+  background: linear-gradient(90deg, #c4b5fd 0%, #e0d4fc 100%);
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.perfume-title {
+  background: linear-gradient(90deg, #6a82fb 0%, #fc5c7d 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.soap-title {
+  background: linear-gradient(90deg, #43cea2 0%, #185a9d 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
