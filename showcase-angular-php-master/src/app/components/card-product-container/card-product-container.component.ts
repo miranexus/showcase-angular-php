@@ -28,7 +28,7 @@ export class CardProductContainerComponent {
       numScroll: 1
     },
     {
-      breakpoint: '400px',
+      breakpoint: '350px',
       numVisible: 1, // Fallback for very small screens
       numScroll: 1
     }

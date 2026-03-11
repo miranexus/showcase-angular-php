@@ -49,3 +49,26 @@ $carousel-chevron-offset: $padding-08;
 mnx-card-product {
   margin: 0 $carousel-gap-x;
 }
+
+@media (max-width: 400px) {
+  :host ::ng-deep .p-card {
+    width: 48vw;
+    min-width: 48vw;
+    max-width: 48vw;
+  }
+  :host ::ng-deep .p-carousel-item {
+    padding-inline-start: 1vw;
+    padding-inline-end: 1vw;
+  }
+}
+@media (min-width: 401px) and (max-width: 600px) {
+  :host ::ng-deep .p-card {
+    width: 44vw;
+    min-width: 44vw;
+    max-width: 44vw;
+  }
+  :host ::ng-deep .p-carousel-item {
+    padding-inline-start: 2vw;
+    padding-inline-end: 2vw;
+  }
+}

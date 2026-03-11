@@ -1,6 +1,5 @@
 import { Component, Injectable, ViewEncapsulation } from '@angular/core';
 import { CarouselBannerComponent } from '../../carousel-banner/carousel-banner.component';
-import { ToolbarHeaderComponent } from '../../toolbar-header/toolbar-header.component';
 import { CardProductContainerComponent } from '../../card-product-container/card-product-container.component';
 
 @Injectable({
@@ -12,7 +11,7 @@ import { CardProductContainerComponent } from '../../card-product-container/card
   selector: 'mnx-ecommerce-step',
   templateUrl: './ecommerce-step.component.html',
   styleUrls: ['./ecommerce-step.component.scss'],
-  imports: [CarouselBannerComponent, ToolbarHeaderComponent, CardProductContainerComponent],
+  imports: [CarouselBannerComponent, CardProductContainerComponent],
   encapsulation: ViewEncapsulation.None
 })
 export class EcommerceStepComponent {
@@ -35,7 +34,7 @@ export class EcommerceStepComponent {
     {
       image: 'assets/both/card-images-perfume/eau_de_nuit_product_nocturnal_essense_description.png',
       title: 'Eau de Nuit',
-      description: 'Nocturnal Essense'
+      description: 'Nocturnal Essence'
     },
     {
       image: 'assets/both/card-images-perfume/eau_de_rose_product_rose_blossom_description.png',
@@ -56,7 +55,7 @@ export class EcommerceStepComponent {
 
   soapCards = [
     {
-      image: 'assets/both/card-images-soap/eclat_de_lys_product_lavander_and_white_tea_description.png.png',
+      image: 'assets/both/card-images-soap/eclat_de_lys_product_lavender_and_white_tea_description.png',
       title: 'Éclat de Lys',
       description: 'Lavender & White Tea'
     },
@@ -71,7 +70,7 @@ export class EcommerceStepComponent {
       description: 'Black Vanilla'
     },
     {
-      image: 'assets/both/card-images-soap/ethereal_bloom_product_rose_blossomr_description.png',
+      image: 'assets/both/card-images-soap/ethereal_bloom_product_rose_blossom_description.png',
       title: 'Ethereal Bloom',
       description: 'Rose Blossom'
     },
