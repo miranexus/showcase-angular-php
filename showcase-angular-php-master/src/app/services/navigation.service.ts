@@ -26,7 +26,7 @@ export class NavigationService {
   }
 
   navigateToFirstStep(callback?: () => void) {
-    this.navigateToStep(this.signalsStoreService.getSelectedStep() || RouteIds.pSelect, callback);
+    this.navigateToStep(this.signalsStoreService.getSelectedStep() || RouteIds.ecommerce, callback);
   }
 
   private prepareSubscriptionToNavigationEvents() {
