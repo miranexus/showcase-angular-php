@@ -85,13 +85,11 @@ $product-card-box-shadow: 0 $padding-02 $padding-08 rgba(0,0,0,0.04);
 
 .add-to-cart-btn {
   color: $color-white;
-  width: $padding-140;
+  width: 100%;
   border: none;
   margin: $padding-04 auto 0 auto;
   padding: $padding-04 $padding-08;
   display: block;
-  min-width: $padding-140;
-  max-width: $padding-140;
   font-size: $font-size-14;
   align-self: center;
   min-height: $padding-32;
@@ -110,16 +108,12 @@ $product-card-box-shadow: 0 $padding-02 $padding-08 rgba(0,0,0,0.04);
 
 @media (max-width: 600px) {
   :host ::ng-deep .p-card {
-    width: calc(#{$product-card-width} * 0.7);
+    width: fit-content;
     height: fit-content;
-    min-width: calc(#{$product-card-width} * 0.7);
-    max-width: calc(#{$product-card-width} * 0.7);
+    min-width: fit-content;
+    max-width: 100%;
   }
   .add-to-cart-btn {
-    width: calc(#{$padding-140} * 0.7);
-    padding: calc(#{$padding-04} * 0.7) calc(#{$padding-08} * 0.7);
-    min-width: calc(#{$padding-140} * 0.7);
-    max-width: calc(#{$padding-140} * 0.7);
-    font-size: calc(#{$font-size-14} * 0.9);
+    font-size: $font-size-12;
   }
 }

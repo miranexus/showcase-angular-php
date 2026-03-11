@@ -24,7 +24,12 @@ export class CardProductContainerComponent {
     },
     {
       breakpoint: '600px',
-      numVisible: 2,
+      numVisible: 2, // Ensure 2 cards are visible on mobile
+      numScroll: 1
+    },
+    {
+      breakpoint: '400px',
+      numVisible: 1, // Fallback for very small screens
       numScroll: 1
     }
   ];
