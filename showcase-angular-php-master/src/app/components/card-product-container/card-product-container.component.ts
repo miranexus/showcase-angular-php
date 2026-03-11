@@ -24,7 +24,7 @@ export class CardProductContainerComponent {
     },
     {
       breakpoint: '600px',
-      numVisible: 1,
+      numVisible: 2,
       numScroll: 1
     }
   ];

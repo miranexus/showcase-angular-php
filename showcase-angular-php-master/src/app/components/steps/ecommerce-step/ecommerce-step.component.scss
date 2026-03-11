@@ -16,12 +16,12 @@ mnx-ecommerce-step {
 }
 
 .collection-title {
-  margin: 40px 0 16px 0;
   font-size: 2rem;
   text-align: center;
   font-weight: 700;
   background: linear-gradient(90deg, #b6c2d6 0%, #cfd8e3 100%);
   font-family: 'Poppins', sans-serif;
+  margin-bottom: 10px;
   letter-spacing: 0.04em;
   background-clip: text;
   -webkit-background-clip: text;
@@ -44,6 +44,8 @@ mnx-ecommerce-step {
 
 @media (max-width: 600px) {
   .collection-title {
+    font-size: 25px;
+    margin-bottom: 0;
     padding-inline-start: 20px;
     padding-inline-end: 20px;
   }
