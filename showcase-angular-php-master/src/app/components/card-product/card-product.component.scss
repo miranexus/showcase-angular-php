@@ -2,10 +2,7 @@
 
 $product-card-img-size: $padding-200;
 $product-card-width: $product-card-img-size;
-$product-card-height: $padding-325;
 $product-card-box-shadow: 0 $padding-02 $padding-08 rgba(0,0,0,0.04);
-
-$product-card-img-height: $padding-165;
 
 .product-title {
   overflow: hidden;
@@ -40,7 +37,7 @@ $product-card-img-height: $padding-165;
 
 .card-product-image-wrapper {
   width: 100%;
-  height: $product-card-img-height;
+  height: fit-content;
   display: flex;
   max-width: 100%;
   align-items: center;
@@ -50,7 +47,7 @@ $product-card-img-height: $padding-165;
 
 :host ::ng-deep .p-card {
   width: $product-card-width;
-  height: $product-card-height;
+  height: fit-content;
   margin: 0 auto;
   display: flex;
   padding: $padding-08;
@@ -68,10 +65,11 @@ $product-card-img-height: $padding-165;
 
 .card-product-image {
   width: auto;
-  height: 100%;
+  height: auto;
   margin: 0 auto;
   display: block;
   max-width: 100%;
+  max-height: 100%;
   object-fit: contain;
   border-top-left-radius: $border-radius-06;
   border-top-right-radius: $border-radius-06;
@@ -107,5 +105,21 @@ $product-card-img-height: $padding-165;
   &:focus {
     color: $color-white;
     background: $color-blue;
+  }
+}
+
+@media (max-width: 600px) {
+  :host ::ng-deep .p-card {
+    width: calc(#{$product-card-width} * 0.7);
+    height: fit-content;
+    min-width: calc(#{$product-card-width} * 0.7);
+    max-width: calc(#{$product-card-width} * 0.7);
+  }
+  .add-to-cart-btn {
+    width: calc(#{$padding-140} * 0.7);
+    padding: calc(#{$padding-04} * 0.7) calc(#{$padding-08} * 0.7);
+    min-width: calc(#{$padding-140} * 0.7);
+    max-width: calc(#{$padding-140} * 0.7);
+    font-size: calc(#{$font-size-14} * 0.9);
   }
 }
