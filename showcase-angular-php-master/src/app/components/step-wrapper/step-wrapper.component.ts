@@ -4,7 +4,7 @@ import { RouterOutlet } from '@angular/router';
 import { CarouselModule } from 'primeng/carousel';
 import { Component, inject, Injectable } from '@angular/core';
 import { NavigationService, SignalsStoreService } from '../../services';
-import { CarouselPrimengComponent } from '../carousel-primeng/carousel-primeng.component';
+import {ToolbarHeaderComponent} from '../toolbar-header/toolbar-header.component';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +13,7 @@ import { CarouselPrimengComponent } from '../carousel-primeng/carousel-primeng.c
 @Component({
   standalone: true,
   selector: 'mnx-step-wrapper',
-  imports: [RouterOutlet, CarouselModule, CarouselPrimengComponent],
+  imports: [RouterOutlet, CarouselModule, ToolbarHeaderComponent],
   templateUrl: './step-wrapper.component.html',
   styleUrl: './step-wrapper.component.scss'
 })

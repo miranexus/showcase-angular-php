@@ -65,7 +65,9 @@ mnx-toolbar-header {
   .hamburger-btn {
     display: none;
     @include toolbar-icon-btn;
-
+    .p-button-icon {
+      font-size: $font-size-24;
+    }
     &.p-button:hover,
     &.p-button:focus,
     &.p-button:active,
@@ -85,7 +87,6 @@ mnx-toolbar-header {
   .p-toolbar-group-end {
     gap: $padding-10;
     margin-inline-start: auto;
-
     @media (min-width: $breakpoint-sm + 1) {
       padding-inline-end: $padding-20;
     }
@@ -98,14 +99,14 @@ mnx-toolbar-header {
     align-items: center;
 
     i {
-      font-size: $font-size-35;
+      font-size: $font-size-32;
       @include gradient-text;
       @include icon-hover-effect;
     }
 
     span {
       font-weight: 900;
-      font-size: 28px;
+      font-size: $font-size-23;
       letter-spacing: 0.08em;
       @include gradient-text;
     }
@@ -179,7 +180,9 @@ mnx-toolbar-header {
 
   .cart-btn {
     @include toolbar-icon-btn;
-
+    .p-button-icon {
+      font-size: $font-size-32;
+    }
     &.p-button:hover,
     &.p-button:focus,
     &.p-button:active,
@@ -193,7 +196,9 @@ mnx-toolbar-header {
   .search-btn-mobile {
     display: none;
     @include toolbar-icon-btn;
-
+    .p-button-icon {
+      font-size: $font-size-24;
+    }
     &.p-button:hover,
     &.p-button:focus,
     &.p-button:active,

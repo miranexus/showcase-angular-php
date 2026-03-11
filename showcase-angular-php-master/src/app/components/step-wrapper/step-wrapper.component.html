@@ -1,14 +1,23 @@
 <div class="step-header"></div>
+
+<!--This is added out to test an app in isolation-->
+<div class="mnx-montserrat">
+  <mnx-toolbar-header></mnx-toolbar-header>
+</div>
+
 <div class="scrollable-router-outlet">
   <router-outlet></router-outlet>
 </div>
-<div class="step-wrapper">
-  <mnx-carousel-primeng
-    [items]="steps"
-    [routeIds]="RouteIds"
-    [activeIndex]="activeIndex"
-    [buttonClassFn]="buttonClassFn"
-    (itemClick)="changeStep($event.id)"
-    (carouselChange)="onCarouselChange($event)"
-  ></mnx-carousel-primeng>
-</div>
+
+<!--This is commented out to test an app in isolation-->
+
+<!--<div class="step-wrapper">-->
+<!--  <mnx-carousel-primeng-->
+<!--    [items]="steps"-->
+<!--    [routeIds]="RouteIds"-->
+<!--    [activeIndex]="activeIndex"-->
+<!--    [buttonClassFn]="buttonClassFn"-->
+<!--    (itemClick)="changeStep($event.id)"-->
+<!--    (carouselChange)="onCarouselChange($event)"-->
+<!--  ></mnx-carousel-primeng>-->
+<!--</div>-->

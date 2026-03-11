@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CarouselModule } from 'primeng/carousel';
 import { CardProductComponent } from '../card-product/card-product.component';
 
@@ -9,7 +9,7 @@ import { CardProductComponent } from '../card-product/card-product.component';
   styleUrls: ['./card-product-container.component.scss'],
   imports: [CarouselModule, CardProductComponent]
 })
-export class CardProductContainerComponent implements OnChanges {
+export class CardProductContainerComponent {
   @Input() cards: any[] = [];
   @Input() responsiveOptions: any[] = [
     {
@@ -28,8 +28,4 @@ export class CardProductContainerComponent implements OnChanges {
       numScroll: 1
     }
   ];
-
-  ngOnChanges(changes: SimpleChanges) {
-    // No-op, but required for Angular to detect @Input changes
-  }
 }
