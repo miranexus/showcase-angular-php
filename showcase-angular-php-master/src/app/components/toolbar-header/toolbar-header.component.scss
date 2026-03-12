@@ -201,4 +201,11 @@ mnx-toolbar-header {
       }
     }
   }
+  .cart-btn .p-button-icon {
+    transition: transform 0.3s;
+  }
+  .cart-btn:hover .p-button-icon,
+  .cart-btn:focus .p-button-icon {
+    transform: scale(1.15);
+  }
 }
