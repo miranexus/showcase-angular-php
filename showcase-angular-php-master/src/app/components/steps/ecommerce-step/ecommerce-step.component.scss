@@ -51,10 +51,4 @@ mnx-ecommerce-step {
   mnx-ecommerce-step {
     background-color: $mnx-cream-bg-dark;
   }
-  .perfume-title {
-    @include gradient-text($gradient-perfume-title-dark);
-  }
-  .soap-title {
-    @include gradient-text($gradient-soap-title-dark);
-  }
 }

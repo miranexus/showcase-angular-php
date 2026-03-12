@@ -66,14 +66,14 @@ mnx-toolbar-header {
 
     i {
       font-size: $font-size-32;
-      @include gradient-text($gradient-brand);
+      @include gradient-text($gradient-company-title);
     }
 
     span {
       font-weight: 900;
       font-size: $font-size-23;
       letter-spacing: 0.08em;
-      @include gradient-text($gradient-brand);
+      @include gradient-text($gradient-company-title);
     }
 
     &:hover i {
@@ -114,7 +114,7 @@ mnx-toolbar-header {
       transition: box-shadow 0.3s ease, background 0.3s ease;
       background:
         linear-gradient(#faf9fd, #f7f7fb) padding-box,
-        $gradient-border border-box;
+        $gradient-search-bar-border border-box;
       font-weight: 600;
       border-radius: $border-radius-32;
       padding-block: $padding-09;
@@ -131,7 +131,7 @@ mnx-toolbar-header {
         outline: transparent none;
         background:
           linear-gradient(#faf9fd, #f7f7fb) padding-box,
-          $gradient-border border-box;
+          $gradient-search-bar-border border-box;
         box-shadow: none;
         border-color: transparent;
       }
@@ -146,7 +146,7 @@ mnx-toolbar-header {
   .cart-btn {
     .p-button-icon {
       font-size: $font-size-32;
-      @include gradient-text($gradient-brand);
+      @include gradient-text($gradient-company-title);
     }
     &.p-button:hover,
     &.p-button:focus,
@@ -162,7 +162,7 @@ mnx-toolbar-header {
     @include toolbar-icon-btn;
     .p-button-icon {
       font-size: $font-size-24;
-      @include gradient-text($gradient-brand);
+      @include gradient-text($gradient-company-title);
     }
     &.p-button:hover,
     &.p-button:focus,
