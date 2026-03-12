@@ -2,13 +2,14 @@ import { Component, ViewEncapsulation } from '@angular/core';
 import { Toolbar } from 'primeng/toolbar';
 import { Button } from 'primeng/button';
 import { InputText } from 'primeng/inputtext';
+import {NgOptimizedImage} from '@angular/common';
 
 @Component({
   standalone: true,
   selector: 'mnx-toolbar-header',
   templateUrl: './toolbar-header.component.html',
   styleUrls: ['./toolbar-header.component.scss'],
-  imports: [Toolbar, Button, InputText],
+  imports: [Toolbar, Button, InputText, NgOptimizedImage],
   encapsulation: ViewEncapsulation.None
 })
 export class ToolbarHeaderComponent {}

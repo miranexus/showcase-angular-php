@@ -209,3 +209,17 @@ mnx-toolbar-header {
     transform: scale(1.15);
   }
 }
+
+.company-logo-img {
+  height: 2.5rem;
+  width: auto;
+  max-width: 100%;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+@media (max-width: $breakpoint-sm) {
+  .company-logo-img {
+    height: 2rem;
+  }
+}
