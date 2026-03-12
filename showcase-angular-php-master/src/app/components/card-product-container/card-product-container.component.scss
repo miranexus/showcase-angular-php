@@ -3,6 +3,11 @@
 $carousel-gap-x: $padding-15;
 $carousel-chevron-offset: $padding-08;
 
+:host {
+  background: $mnx-cream-bg;
+  display: block;
+}
+
 .product-carousel,
 :host ::ng-deep .p-carousel {
   left: unset;
