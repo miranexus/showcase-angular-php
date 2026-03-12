@@ -28,7 +28,6 @@ mnx-ecommerce-step {
   font-family: 'Poppins', sans-serif;
   margin-bottom: $padding-10;
   letter-spacing: 0.04em;
-  @include gradient-text($gradient-collection-title);
 }
 
 .perfume-title {
@@ -51,9 +50,6 @@ mnx-ecommerce-step {
 @media (prefers-color-scheme: dark) {
   mnx-ecommerce-step {
     background-color: $mnx-cream-bg-dark;
-  }
-  .collection-title {
-    @include gradient-text($gradient-collection-title-dark);
   }
   .perfume-title {
     @include gradient-text($gradient-perfume-title-dark);
