@@ -1,0 +1,25 @@
+@use 'variables' as *;
+
+$gradient-brand: linear-gradient(135deg, #f7e6c4 0%, #e9d8fd 40%, #b2f2e5 100%);
+$gradient-border: linear-gradient(135deg, #b48ba2, #b0a3d4);
+
+@mixin gradient-text {
+  color: #fff;
+  background: $gradient-brand;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@mixin toolbar-icon-btn {
+  .p-button-icon {
+    @include gradient-text;
+    filter: drop-shadow(0 0 0.2rem rgba(233,216,253,0.3));
+    font-size: $font-size-32;
+    transition: filter 0.3s, transform 0.3s;
+  }
+  &:hover .p-button-icon {
+    filter: drop-shadow(0 0 0.5rem rgba(233,216,253,0.5));
+    transform: scale(1.15);
+  }
+}
