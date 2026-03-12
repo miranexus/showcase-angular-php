@@ -3,17 +3,24 @@
 $gradient-brand: linear-gradient(135deg, #f7e6c4 0%, #e9d8fd 40%, #b2f2e5 100%);
 $gradient-border: linear-gradient(135deg, #b48ba2, #b0a3d4);
 
-@mixin gradient-text {
-  color: #fff;
-  background: $gradient-brand;
+$gradient-collection-title: linear-gradient(90deg, #8a99b6 0%, #a3aab8 100%);
+$gradient-perfume-title: linear-gradient(90deg, #6c8ec6 0%, #c699a8 100%);
+$gradient-soap-title: linear-gradient(90deg, #6fc3b3 0%, #6c8ec6 100%);
+$gradient-collection-title-dark: linear-gradient(90deg, #bfcbe0 0%, #d0d4da 100%);
+$gradient-perfume-title-dark: linear-gradient(90deg, #9faec0 0%, #d0aebf 100%);
+$gradient-soap-title-dark: linear-gradient(90deg, #8ad2c3 0%, #9faec0 100%);
+
+@mixin gradient-text($gradient) {
+  background: $gradient;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  color: unset;
 }
 
 @mixin toolbar-icon-btn {
   .p-button-icon {
-    @include gradient-text;
+    @include gradient-text($gradient-brand);
     filter: drop-shadow(0 0 0.2rem rgba(233,216,253,0.3));
     font-size: $font-size-32;
     transition: filter 0.3s, transform 0.3s;

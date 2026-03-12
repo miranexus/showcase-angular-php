@@ -66,14 +66,14 @@ mnx-toolbar-header {
 
     i {
       font-size: $font-size-32;
-      @include gradient-text;
+      @include gradient-text($gradient-brand);
     }
 
     span {
       font-weight: 900;
       font-size: $font-size-23;
       letter-spacing: 0.08em;
-      @include gradient-text;
+      @include gradient-text($gradient-brand);
     }
 
     &:hover i {
@@ -146,7 +146,7 @@ mnx-toolbar-header {
   .cart-btn {
     .p-button-icon {
       font-size: $font-size-32;
-      @include gradient-text;
+      @include gradient-text($gradient-brand);
     }
     &.p-button:hover,
     &.p-button:focus,
@@ -162,7 +162,7 @@ mnx-toolbar-header {
     @include toolbar-icon-btn;
     .p-button-icon {
       font-size: $font-size-24;
-      @include gradient-text;
+      @include gradient-text($gradient-brand);
     }
     &.p-button:hover,
     &.p-button:focus,

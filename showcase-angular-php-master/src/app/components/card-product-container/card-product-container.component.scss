@@ -8,6 +8,12 @@ $carousel-chevron-offset: $padding-08;
   display: block;
 }
 
+@media (prefers-color-scheme: dark) {
+  :host {
+    background: $mnx-cream-bg-dark;
+  }
+}
+
 .product-carousel,
 :host ::ng-deep .p-carousel {
   left: unset;
