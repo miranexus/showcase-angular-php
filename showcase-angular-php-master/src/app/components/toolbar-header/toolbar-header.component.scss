@@ -1,17 +1,26 @@
 @use 'variables' as *;
 
-$color-brand: #525777;
-$focus-ring: 0 0 0 $padding-04 rgba(196, 181, 253, 0.2), 0 0 $padding-10 rgba(224, 212, 252, 0.15);
-$shadow-hover: drop-shadow(0 0 $padding-05 rgba(196, 181, 253, 0.5));
-$shadow-subtle: drop-shadow(0 0 $padding-02 rgba(196, 181, 253, 0.3));
-$gradient-brand: linear-gradient(135deg, #c4b5fd, #e0d4fc);
-$gradient-border: linear-gradient(135deg, #9388be, #a89fbd);
+// Modern, snazzy color scheme for perfumes and soaps
+$color-brand: #e9d8fd; // Soft lavender for icons/text
+$color-accent: #f7e6c4; // Soft gold
+$color-secondary: #f8bbd0; // Blush pink
+$color-mint: #b2f2e5; // Mint accent
+$color-bg-dark1: #23243a; // Deep indigo
+$color-bg-dark2: #3a2747; // Deep plum
+$color-bg-dark3: #1e2240; // Navy
+
+$focus-ring: 0 0 0 $padding-04 rgba(233, 216, 253, 0.2), 0 0 $padding-10 rgba(248, 187, 208, 0.15);
+$shadow-hover: drop-shadow(0 0 $padding-05 rgba(233, 216, 253, 0.5));
+$shadow-subtle: drop-shadow(0 0 $padding-02 rgba(233, 216, 253, 0.3));
+$gradient-brand: linear-gradient(135deg, #f7e6c4 0%, #e9d8fd 40%, #b2f2e5 100%);
+$gradient-border: linear-gradient(135deg, #b48ba2, #b0a3d4); // slightly darker blush and lavender
 
 @mixin gradient-text {
   background: $gradient-brand;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  color: #fff;
 }
 
 @mixin icon-hover-effect {
@@ -48,7 +57,7 @@ mnx-toolbar-header {
     border: none;
     max-width: 100%;
     box-shadow: none;
-    background: linear-gradient(180deg, #2e3354, #1e2240);
+    background: linear-gradient(120deg, #23243a 0%, #3a2747 60%, #1e2240 100%);
     align-items: center;
     border-radius: 0;
     padding-inline: max($padding-16, calc((100% - $max-width-1200) / 2));
@@ -92,7 +101,7 @@ mnx-toolbar-header {
     }
   }
 
-  .acme-logo {
+  .company-logo {
     gap: $padding-08;
     cursor: pointer;
     display: flex;
@@ -131,14 +140,14 @@ mnx-toolbar-header {
 
     .search-icon {
       top: $percent-50;
-      color: $color-brand;
+      color: $color-bg-dark2;
       z-index: 1;
       position: absolute;
       font-size: $font-size-13;
       transform: translateY(-$percent-50);
       pointer-events: none;
       inset-inline-start: $padding-14;
-      -webkit-text-stroke: $padding-01 $color-brand;
+      -webkit-text-stroke: $padding-01 $color-bg-dark2;
     }
 
     input.p-inputtext.p-inputtext {
@@ -182,6 +191,7 @@ mnx-toolbar-header {
     @include toolbar-icon-btn;
     .p-button-icon {
       font-size: $font-size-32;
+      @include gradient-text;
     }
     &.p-button:hover,
     &.p-button:focus,
@@ -192,12 +202,12 @@ mnx-toolbar-header {
       outline: none;
     }
   }
-
   .search-btn-mobile {
     display: none;
     @include toolbar-icon-btn;
     .p-button-icon {
       font-size: $font-size-24;
+      @include gradient-text;
     }
     &.p-button:hover,
     &.p-button:focus,
@@ -227,13 +237,12 @@ mnx-toolbar-header {
       font-size: $font-size-24;
     }
 
-    .acme-logo {
+    .company-logo {
       i {
         font-size: $font-size-26;
       }
-
       span {
-        font-size: $font-size-23;
+        font-size: $font-size-18;
       }
     }
   }
