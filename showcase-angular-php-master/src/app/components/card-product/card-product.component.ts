@@ -14,7 +14,9 @@ import {FormsModule} from '@angular/forms';
   imports: [Card, PrimeTemplate, NgIf, Rating, NgOptimizedImage, ButtonDirective, FormsModule]
 })
 export class CardProductComponent {
-  @Input() image!: string;
+  @Input() image?: string;
   @Input() title!: string;
-  @Input() description!: string;
+  @Input() description?: string;
+  @Input() showActions: boolean = true;
+  @Input() url?: string;
 }

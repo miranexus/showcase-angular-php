@@ -1,0 +1,114 @@
+@use 'variables' as *;
+@use 'gradients' as *;
+
+$color-light: #faf9fd;
+
+.footer-links {
+  gap: $padding-32;
+  width: 100vw;
+  display: flex;
+  padding: $padding-16 0;
+  background: linear-gradient(120deg, #23243a 0%, #3a2747 60%, #1e2240 100%);
+  box-shadow: 0 -$padding-02 $padding-08 rgba(30,34,64,0.08);
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-link {
+  color: $color-light;
+
+  padding: $padding-08 $padding-24;
+  font-size: $font-size-18;
+  transition: background 0.2s, color 0.2s;
+  background: transparent;
+  font-weight: 700;
+  border-radius: $border-radius-32;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  color: $color-blue-dark;
+  background: rgba(255,255,255,0.08);
+  text-decoration: none;
+}
+
+.footer-carousel {
+  background: linear-gradient(120deg, #23243a 0%, #3a2747 60%, #1e2240 100%);
+  padding: $padding-08 0;
+
+  .p-carousel-items-content {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    flex-direction: row;
+    scrollbar-width: thin;
+  }
+
+  .p-carousel-item {
+    flex: 0 0 auto;
+    width: auto;
+    display: flex;
+    min-width: $padding-80;
+    background: transparent;
+    align-items: center;
+    margin-right: $padding-08;
+    justify-content: center;
+  }
+
+  .footer-link {
+    color: transparent;
+    display: flex;
+    padding: $padding-08 $padding-24;
+    overflow: hidden;
+    font-size: $font-size-18;
+    text-align: center;
+    transition: filter 0.3s, transform 0.3s;
+    background: transparent;
+    font-weight: 700;
+    align-items: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    border-radius: $border-radius-32;
+    letter-spacing: 0.04em;
+    justify-content: center;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    @include gradient-text($gradient-company-title);
+  }
+
+  .footer-link:hover {
+    filter: drop-shadow(0 0 $padding-08 rgba(233,216,253,0.5));
+    transform: scale(1.15);
+  }
+
+  .p-carousel-item {
+    padding: $padding-08 $padding-16;
+    font-size: $font-size-18;
+    min-width: $padding-80;
+    max-width: $padding-160;
+    white-space: nowrap;
+  }
+}
+
+.footer-carousel .p-carousel-item {
+  background: transparent;
+}
+
+@media (max-width: 700px) {
+  .footer-links {
+    gap: $padding-08;
+    padding: $padding-08 0;
+  }
+  .footer-link {
+    padding: $padding-08 $padding-12;
+    font-size: $font-size-16;
+  }
+  .footer-carousel .p-carousel-item {
+    padding: $padding-08 $padding-12;
+    min-width: $padding-60;
+    max-width: $padding-120;
+    font-size: $font-size-16;
+  }
+}

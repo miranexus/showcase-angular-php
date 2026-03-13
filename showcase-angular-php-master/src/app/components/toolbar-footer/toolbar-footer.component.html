@@ -1,0 +1,23 @@
+Push preliminary <ng-container *ngIf="(isMobile | async); else desktopLinks">
+  <p-carousel
+    [value]="links"
+    [circular]="true"
+    [numScroll]="1"
+    [numVisible]="2"
+    [autoplayInterval]="4000"
+    styleClass="footer-carousel"
+    [showIndicators]="false"
+    [showNavigators]="true"
+  >
+    <ng-template pTemplate="item" let-link>
+      <a [href]="link.url" class="footer-link">{{ link.title }}</a>
+    </ng-template>
+  </p-carousel>
+</ng-container>
+<ng-template #desktopLinks>
+  <div class="footer-links">
+    <a *ngFor="let link of links" [href]="link.url" class="footer-link">
+      {{ link.title }}
+    </a>
+  </div>
+</ng-template>
