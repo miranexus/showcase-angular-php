@@ -1,4 +1,4 @@
-Push preliminary <ng-container *ngIf="(isMobile | async); else desktopLinks">
+<ng-container *ngIf="(isMobile | async); else desktopLinks">
   <p-carousel
     [value]="links"
     [circular]="true"
