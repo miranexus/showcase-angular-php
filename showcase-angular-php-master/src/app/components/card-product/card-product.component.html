@@ -1,29 +1,34 @@
-<ng-container *ngIf="!showActions && url; else cardBlock">
+@if (!showActions && url) {
   <a [href]="url" class="footer-link">{{ title }}</a>
-</ng-container>
-<ng-template #cardBlock>
+} @else {
   <p-card>
     <ng-template pTemplate="header">
-      <div class="card-product-image-wrapper" *ngIf="image">
-        <img
-          class="card-product-image"
-          width="200"
-          height="200"
-          alt="{{ title }}"
-          [ngSrc]="image"
-        />
-      </div>
+      @if (image) {
+        <div class="card-product-image-wrapper">
+          <img
+            class="card-product-image"
+            width="200"
+            height="200"
+            alt="{{ title }}"
+            [ngSrc]="image"
+          />
+        </div>
+      }
     </ng-template>
     <div class="product-title">{{ title }}</div>
-    <div class="product-description" *ngIf="description">{{ description }}</div>
-    <div class="product-review-stars" *ngIf="showActions">
-      <p-rating
-        class="product-rating"
-        [stars]="5"
-        [ngModel]="4"
-        [readonly]="true"
-      ></p-rating>
-    </div>
-    <button pButton type="button" class="add-to-cart-btn" *ngIf="showActions">Add to cart</button>
+    @if (description) {
+      <div class="product-description">{{ description }}</div>
+    }
+    @if (showActions) {
+      <div class="product-review-stars">
+        <p-rating
+          class="product-rating"
+          [stars]="5"
+          [ngModel]="4"
+          [readonly]="true"
+        ></p-rating>
+      </div>
+      <button pButton type="button" class="add-to-cart-btn">Add to cart</button>
+    }
   </p-card>
-</ng-template>
+}

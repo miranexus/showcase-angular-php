@@ -1,4 +1,4 @@
-<ng-container *ngIf="(isMobile | async); else desktopLinks">
+@if (isMobile | async) {
   <p-carousel
     [value]="links"
     [circular]="true"
@@ -13,11 +13,10 @@
       <a [href]="link.url" class="footer-link">{{ link.title }}</a>
     </ng-template>
   </p-carousel>
-</ng-container>
-<ng-template #desktopLinks>
+} @else {
   <div class="footer-links">
     <a *ngFor="let link of links" [href]="link.url" class="footer-link">
       {{ link.title }}
     </a>
   </div>
-</ng-template>
+}

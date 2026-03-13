@@ -5,9 +5,9 @@
   [(ngModel)]="selectedDirection"
 >
   <ng-template let-option pTemplate="item">
-    <ng-container *ngIf="option.name === 'One way' || option.name === 'Return'">
+    @if (option.name === 'One way' || option.name === 'Return') {
       <span class="directions pi" [ngClass]="option.name === 'One way' ? 'pi-arrow-right' : 'pi-arrow-right-arrow-left'"></span>
       <span>{{ option.name }}</span>
-    </ng-container>
+    }
   </ng-template>
 </p-select>

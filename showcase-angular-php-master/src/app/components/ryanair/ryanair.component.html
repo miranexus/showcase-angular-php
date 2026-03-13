@@ -12,7 +12,9 @@
   >
     <ng-template let-selectedItem pTemplate="selectedItem">
       <div class="dropdown-row__dropdown__title">From</div>
-      <div *ngIf="selectedItem" class="dropdown-row__dropdown__selected">{{ selectedItem.name }}</div>
+      @if (selectedItem) {
+        <div class="dropdown-row__dropdown__selected">{{ selectedItem.name }}</div>
+      }
     </ng-template>
   </p-select>
 
@@ -37,7 +39,9 @@
   >
     <ng-template let-selectedItem pTemplate="selectedItem">
       <div class="dropdown-row__dropdown__title">To</div>
-      <div *ngIf="selectedItem" class="dropdown-row__dropdown__selected">{{ selectedItem.name }}</div>
+      @if (selectedItem) {
+        <div class="dropdown-row__dropdown__selected">{{ selectedItem.name }}</div>
+      }
     </ng-template>
   </p-select>
 
