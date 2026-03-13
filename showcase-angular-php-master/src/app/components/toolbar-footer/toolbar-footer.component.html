@@ -15,8 +15,10 @@
   </p-carousel>
 } @else {
   <div class="footer-links">
-    <a *ngFor="let link of links" [href]="link.url" class="footer-link">
-      {{ link.title }}
-    </a>
+    @for (link of links; track link) {
+      <a [href]="link.url" class="footer-link">
+        {{ link.title }}
+      </a>
+    }
   </div>
 }
