@@ -1,7 +1,6 @@
 import { FormsModule } from '@angular/forms';
 import { TableModule } from 'primeng/table';
 import { PrimeNgData } from '../../../models';
-import { DropdownModule } from 'primeng/dropdown';
 import { Component, inject, Injectable, OnInit } from '@angular/core';
 import { PrimeNgDataService, SignalsStoreService } from '../../../services';
 
@@ -11,11 +10,10 @@ import { PrimeNgDataService, SignalsStoreService } from '../../../services';
 
 @Component({
   standalone: true,
-  imports: [
-    FormsModule,
-    DropdownModule,
-    TableModule
-  ],
+   imports: [
+     FormsModule,
+     TableModule
+   ],
   selector: 'mnx-p-table-step',
   templateUrl: './p-table-step.component.html',
   styleUrls: ['./p-table-step.component.scss'],

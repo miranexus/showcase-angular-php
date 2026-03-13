@@ -2,19 +2,17 @@ import { Button } from 'primeng/button';
 import { Dialog } from 'primeng/dialog';
 import { InputText } from 'primeng/inputtext';
 import { FormsModule } from '@angular/forms';
-import { DropdownModule } from 'primeng/dropdown';
 import { AfterViewInit, Component, inject } from '@angular/core';
 import { PrimeNgDataService, SignalsStoreService } from '../../../services';
 
 @Component({
   standalone: true,
-  imports: [
-    DropdownModule,
-    Button,
-    Dialog,
-    InputText,
-    FormsModule
-  ],
+   imports: [
+     Button,
+     Dialog,
+     InputText,
+     FormsModule
+   ],
   selector: 'mnx-p-dialog-step',
   templateUrl: './p-dialog-step.component.html',
   styleUrls: ['./p-dialog-step.component.scss'],
