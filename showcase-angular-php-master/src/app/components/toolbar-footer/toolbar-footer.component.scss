@@ -2,39 +2,41 @@
 @use 'gradients' as *;
 
 $color-light: #faf9fd;
+$p-footer-link-width: 200px;
+$footer-link-hover-shadow: drop-shadow(0 0 $padding-08 rgba(233,216,253,0.5));
 
 .footer-links {
   gap: $padding-32;
   width: 100vw;
   display: flex;
   padding: $padding-16 0;
-  background: linear-gradient(120deg, #23243a 0%, #3a2747 60%, #1e2240 100%);
+  background: $gradient-toolbar;
   box-shadow: 0 -$padding-02 $padding-08 rgba(30,34,64,0.08);
   align-items: center;
   justify-content: center;
 }
 
 .footer-link {
-  color: $color-light;
-
   padding: $padding-08 $padding-24;
   font-size: $font-size-18;
+  text-align: center;
   transition: background 0.2s, color 0.2s;
   background: transparent;
   font-weight: 700;
   border-radius: $border-radius-32;
   letter-spacing: 0.04em;
   text-decoration: none;
+  @include gradient-text($gradient-company-title);
 }
 
 .footer-link:hover {
-  color: $color-blue-dark;
-  background: rgba(255,255,255,0.08);
+  filter: $footer-link-hover-shadow;
+  transform: scale(1.15);
   text-decoration: none;
 }
 
 .footer-carousel {
-  background: linear-gradient(120deg, #23243a 0%, #3a2747 60%, #1e2240 100%);
+  background: $gradient-toolbar;
   padding: $padding-08 0;
 
   .p-carousel-items-content {
@@ -47,9 +49,10 @@ $color-light: #faf9fd;
 
   .p-carousel-item {
     flex: 0 0 auto;
-    width: auto;
     display: flex;
-    min-width: $padding-80;
+    padding: $padding-08 $padding-16;
+    font-size: $font-size-18;
+    white-space: nowrap;
     background: transparent;
     align-items: center;
     margin-right: $padding-08;
@@ -79,21 +82,29 @@ $color-light: #faf9fd;
   }
 
   .footer-link:hover {
-    filter: drop-shadow(0 0 $padding-08 rgba(233,216,253,0.5));
+    filter: $footer-link-hover-shadow;
     transform: scale(1.15);
-  }
-
-  .p-carousel-item {
-    padding: $padding-08 $padding-16;
-    font-size: $font-size-18;
-    min-width: $padding-80;
-    max-width: $padding-160;
-    white-space: nowrap;
   }
 }
 
-.footer-carousel .p-carousel-item {
-  background: transparent;
+@media (min-width: 701px) {
+  .footer-link {
+    width: $p-footer-link-width;
+    filter: none;
+    min-width: $p-footer-link-width;
+    max-width: $p-footer-link-width;
+    transform: none;
+    transition: filter 0.3s, transform 0.3s;
+  }
+  .footer-link:hover {
+    filter: $footer-link-hover-shadow;
+    transform: scale(1.15);
+  }
+  .footer-carousel .p-carousel-item {
+    width: $p-footer-link-width;
+    min-width: $p-footer-link-width;
+    max-width: $p-footer-link-width;
+  }
 }
 
 @media (max-width: 700px) {

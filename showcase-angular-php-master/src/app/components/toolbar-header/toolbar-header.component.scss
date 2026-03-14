@@ -14,7 +14,7 @@ mnx-toolbar-header {
     border: none;
     max-width: 100%;
     box-shadow: none;
-    background: linear-gradient(120deg, #23243a 0%, #3a2747 60%, #1e2240 100%);
+    background: $gradient-toolbar;
     align-items: center;
     border-radius: 0;
     padding-inline: max($padding-16, calc((100% - $max-width-1200) / 2));

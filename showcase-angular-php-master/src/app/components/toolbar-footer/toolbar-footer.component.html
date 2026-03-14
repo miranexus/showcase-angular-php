@@ -1,11 +1,11 @@
 @if (isMobile | async) {
   <p-carousel
+    class="footer-carousel"
     [value]="links"
     [circular]="true"
     [numScroll]="1"
     [numVisible]="2"
     [autoplayInterval]="4000"
-    styleClass="footer-carousel"
     [showIndicators]="false"
     [showNavigators]="true"
   >
