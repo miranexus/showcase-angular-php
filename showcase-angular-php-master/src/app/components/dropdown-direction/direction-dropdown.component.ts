@@ -1,7 +1,7 @@
 import { Select } from 'primeng/select';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { NgClass, NgIf } from '@angular/common';
+import { NgClass } from '@angular/common';
 import { PrimeTemplate } from 'primeng/api';
 
 
@@ -9,7 +9,6 @@ import { PrimeTemplate } from 'primeng/api';
   standalone: true,
   selector: 'direction-dropdown',
   imports: [
-    NgIf,
     Select,
     NgClass,
     FormsModule,

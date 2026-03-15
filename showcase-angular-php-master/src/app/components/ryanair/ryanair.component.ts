@@ -1,4 +1,3 @@
-import { NgIf } from '@angular/common';
 import { Select } from 'primeng/select';
 import { FormsModule } from '@angular/forms';
 import { PrimeTemplate } from 'primeng/api';
@@ -14,7 +13,6 @@ import { NavigationService, SignalsStoreService } from '../../services';
   standalone: true,
   selector: 'ryanair',
   imports: [
-    NgIf,
     Select,
     FormsModule,
     PrimeTemplate,

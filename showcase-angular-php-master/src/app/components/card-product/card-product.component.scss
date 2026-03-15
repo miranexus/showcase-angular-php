@@ -1,6 +1,6 @@
 @use 'variables' as *;
 
-$product-card-img-size: $padding-200;
+$product-card-img-size: $padding-120;
 $product-card-width: $product-card-img-size;
 $product-card-box-shadow: 0 $padding-02 $padding-08 rgba(0,0,0,0.50);
 
@@ -39,10 +39,16 @@ $product-card-box-shadow: 0 $padding-02 $padding-08 rgba(0,0,0,0.50);
   width: 100%;
   margin: 0 auto $padding-08 auto;
   display: flex;
-  max-width: 100%;
   align-items: center;
-  aspect-ratio: 1 / 1;
   justify-content: center;
+}
+
+.card-product-image-wrapper img {
+  width: auto;
+  height: auto;
+  max-width: $product-card-img-size;
+  max-height: $product-card-img-size;
+  object-fit: contain;
 }
 
 :host ::ng-deep .p-card {

@@ -1,7 +1,7 @@
 import {Component, Input} from '@angular/core';
 import { Card } from 'primeng/card';
 import {PrimeTemplate} from 'primeng/api';
-import {NgIf, NgOptimizedImage} from '@angular/common';
+import { NgOptimizedImage} from '@angular/common';
 import { ButtonDirective} from 'primeng/button';
 import { Rating } from 'primeng/rating';
 import {FormsModule} from '@angular/forms';
@@ -11,7 +11,7 @@ import {FormsModule} from '@angular/forms';
   selector: 'mnx-card-product',
   templateUrl: './card-product.component.html',
   styleUrls: ['./card-product.component.scss'],
-  imports: [Card, PrimeTemplate, NgIf, Rating, NgOptimizedImage, ButtonDirective, FormsModule]
+  imports: [Card, PrimeTemplate, Rating, NgOptimizedImage, ButtonDirective, FormsModule]
 })
 export class CardProductComponent {
   @Input() image?: string;

@@ -1,5 +1,4 @@
 import { City } from '../../types';
-import { NgIf } from '@angular/common';
 import { Select } from 'primeng/select';
 import { FormsModule } from '@angular/forms';
 import { PrimeTemplate } from 'primeng/api';
@@ -10,7 +9,6 @@ import { Component, ElementRef, inject, Input, ViewChild } from '@angular/core';
 @Component({
   selector: 'booking-dropdown',
   imports: [
-    NgIf,
     PrimeTemplate,
     Select,
     FormsModule,
