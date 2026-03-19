@@ -2,6 +2,7 @@
 
 $mnx-card-width: 160px;
 $mnx-card-height: 300px;
+$mnx-card-mobile-width: 120px;
 
 $product-card-box-shadow: 0 $padding-02 $padding-08 rgba(0,0,0,0.50);
 
@@ -29,7 +30,6 @@ $product-card-box-shadow: 0 $padding-02 $padding-08 rgba(0,0,0,0.50);
     font-weight: 600;
     white-space: nowrap;
     margin-bottom: $padding-04;
-    text-overflow: ellipsis;
   }
 
   .product-description {
@@ -101,5 +101,25 @@ $product-card-box-shadow: 0 $padding-02 $padding-08 rgba(0,0,0,0.50);
     object-fit: contain;
     border-top-left-radius: $border-radius-06;
     border-top-right-radius: $border-radius-06;
+  }
+}
+
+@media (max-width: 450px) {
+  :host ::ng-deep .p-card {
+    width: $mnx-card-mobile-width;
+    height: auto;
+    min-width: 0;
+    max-width: $mnx-card-width;
+    min-height: 0;
+    max-height: $mnx-card-height;
+  }
+  :host ::ng-deep .p-card .product-title {
+    font-size: $font-size-14;
+  }
+  :host ::ng-deep .p-card .product-description {
+    font-size: $font-size-12;
+  }
+  :host ::ng-deep .p-card .add-to-cart-btn {
+    font-size: $font-size-12;
   }
 }
