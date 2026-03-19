@@ -1,64 +1,7 @@
+
 @use 'variables' as *;
 
-$product-card-img-size: $padding-120;
-$product-card-width: $product-card-img-size;
 $product-card-box-shadow: 0 $padding-02 $padding-08 rgba(0,0,0,0.50);
-
-.product-title {
-  overflow: hidden;
-  font-size: $font-size-17;
-  max-height: $padding-32;
-  text-align: center;
-  font-weight: 600;
-  padding-top: 0;
-  white-space: nowrap;
-  margin-bottom: $padding-04;
-  text-overflow: ellipsis;
-}
-
-.product-description {
-  color: $color-gray-700;
-  width: 100%;
-  height: calc(2 * 1.3em);
-  resize: none;
-  display: -webkit-box;
-  font-size: $font-size-14;
-  overflow: hidden;
-  text-align: center;
-  min-height: calc(2 * 1.3em);
-  max-height: calc(2 * 1.3em);
-  line-height: 1.3;
-  white-space: normal;
-  margin-bottom: $padding-04;
-  text-overflow: ellipsis;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-}
-
-.card-product-image-wrapper {
-  width: 100%;
-  height: auto;
-  margin: 0 auto $padding-08 auto;
-  display: flex;
-  align-items: stretch;
-  padding-left: 0;
-  padding-right: 0;
-  justify-content: center;
-}
-
-.card-product-image-wrapper img,
-.card-product-image {
-  width: 100%;
-  height: auto;
-  display: block;
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-  margin-left: auto;
-  margin-right: auto;
-  border-top-left-radius: $border-radius-06;
-  border-top-right-radius: $border-radius-06;
-}
 
 :host ::ng-deep .p-card {
   width: 100%;
@@ -69,96 +12,116 @@ $product-card-box-shadow: 0 $padding-02 $padding-08 rgba(0,0,0,0.50);
   min-width: 0;
   max-width: 100%;
   box-sizing: border-box;
-  min-height: 0;
   align-items: stretch;
   flex-direction: column;
   justify-content: flex-start;
+
+  .product-title {
+    overflow: hidden;
+    font-size: $font-size-17;
+    max-height: $padding-32;
+    text-align: center;
+    font-weight: 600;
+    white-space: nowrap;
+    margin-bottom: $padding-04;
+    text-overflow: ellipsis;
+  }
+
+  .product-description {
+    color: $color-gray-700;
+    width: 100%;
+    display: -webkit-box;
+    overflow: hidden;
+    font-size: $font-size-14;
+    text-align: center;
+    min-height: calc(2 * 1.3em);
+    max-height: calc(2 * 1.3em);
+    line-height: 1.3;
+    margin-bottom: $padding-04;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+
+  .product-review-stars {
+    display: flex;
+    align-items: center;
+    margin-bottom: $padding-08;
+    justify-content: center;
+  }
+
+  .add-to-cart-btn {
+    color: $color-white;
+    width: 100%;
+    border: none;
+    margin: $padding-04 auto 0 auto;
+    padding: $padding-04 $padding-08;
+    display: block;
+    font-size: $font-size-14;
+    align-self: center;
+    min-height: $padding-32;
+    box-sizing: border-box;
+    box-shadow: $product-card-box-shadow;
+    transition: background 0.2s;
+    background: $color-blue-dark;
+    font-weight: 600;
+    border-radius: $border-radius-06;
+    &:hover,
+    &:focus {
+      color: $color-white;
+      background: $color-blue;
+    }
+  }
 }
 
 :host ::ng-deep .p-card-body {
   padding: 0;
 }
 
-.card-product-image {
+.card-product-image-wrapper {
   width: 100%;
-  height: 100%;
-  margin: 0 auto;
-  object-fit: contain;
-  display: block;
-  border-top-left-radius: $border-radius-06;
-  border-top-right-radius: $border-radius-06;
-}
-
-.product-review-stars {
+  margin: 0 auto $padding-08 auto;
   display: flex;
-  align-items: center;
-  margin-top: 0;
-  margin-bottom: $padding-08;
+  align-items: stretch;
   justify-content: center;
-}
 
-.add-to-cart-btn {
-  color: $color-white;
-  width: 100%;
-  border: none;
-  margin: $padding-04 auto 0 auto;
-  padding: $padding-04 $padding-08;
-  display: block;
-  font-size: $font-size-14;
-  align-self: center;
-  min-height: $padding-32;
-  box-sizing: border-box;
-  box-shadow: $product-card-box-shadow;
-  transition: background 0.2s;
-  background: $color-blue-dark;
-  font-weight: 600;
-  border-radius: $border-radius-06;
-  &:hover,
-  &:focus {
-    color: $color-white;
-    background: $color-blue;
-  }
-}
-
-@media (max-width: 600px) {
-  :host ::ng-deep .p-card {
-    width: 100%;
-    height: fit-content;
-    min-width: 100%;
-    max-width: 100%;
-  }
-  .add-to-cart-btn {
-    font-size: $font-size-12;
-  }
-}
-
-@media (min-width: 401px) and (max-width: 600px) {
-  .card-product-image-wrapper {
-    width: 100%;
-    height: $padding-120;
-    display: flex;
-    overflow: hidden;
-    min-height: $padding-120;
-    max-height: $padding-120;
-    align-items: stretch;
-    padding-left: 0;
-    padding-right: 0;
-    justify-content: center;
-  }
+  img,
   .card-product-image {
-    margin: 0;
     width: 100%;
-    height: 100%;
+    height: auto;
     display: block;
+    max-width: 100%;
+    max-height: 100%;
     object-fit: contain;
+    margin: 0 auto;
     border-top-left-radius: $border-radius-06;
     border-top-right-radius: $border-radius-06;
   }
 }
 
+@media (max-width: 600px) {
+  :host ::ng-deep .p-card {
+    height: fit-content;
+    min-width: 100%;
+    max-width: 100%;
+    .add-to-cart-btn {
+      font-size: $font-size-12;
+    }
+  }
+  .card-product-image-wrapper {
+    height: $padding-120;
+    min-height: $padding-120;
+    max-height: $padding-120;
+    overflow: hidden;
+
+    .card-product-image {
+      height: 100%;
+    }
+  }
+}
+
 @media (min-width: 601px) {
   :host ::ng-deep .p-card {
-    width: 100%;
     min-width: 0;
     max-width: 100%;
   }
