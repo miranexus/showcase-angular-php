@@ -32,6 +32,10 @@ $carousel-chevron-offset: $padding-08;
   justify-content: center;
 }
 
+:host ::ng-deep .p-carousel-content {
+  margin-bottom: $padding-20;
+}
+
 :host ::ng-deep .p-carousel-prev-button,
 :host ::ng-deep .p-carousel-next-button {
   top: 50%;
