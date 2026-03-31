@@ -1,24 +1,21 @@
-@if (isMobile | async) {
-  <p-carousel
-    class="footer-carousel"
-    [value]="links"
-    [circular]="true"
-    [numScroll]="1"
-    [numVisible]="2"
-    [autoplayInterval]="4000"
-    [showIndicators]="false"
-    [showNavigators]="true"
-  >
-    <ng-template pTemplate="item" let-link>
-      <a [href]="link.url" class="footer-link">{{ link.title }}</a>
-    </ng-template>
-  </p-carousel>
-} @else {
-  <div class="footer-links">
-    @for (link of links; track link) {
-      <a [href]="link.url" class="footer-link">
-        {{ link.title }}
-      </a>
-    }
-  </div>
-}
+<p-carousel
+  class="footer-carousel"
+  [value]="links"
+  [circular]="true"
+  [numScroll]="1"
+  [numVisible]="3"
+  [autoplayInterval]="4000"
+  [showIndicators]="false"
+  [showNavigators]="true"
+>
+  <ng-template pTemplate="item" let-link>
+    <a [href]="link.url" class="footer-link">{{ link.title }}</a>
+  </ng-template>
+</p-carousel>
+<div class="footer-links">
+  @for (link of links; track link) {
+    <a [href]="link.url" class="footer-link">
+      {{ link.title }}
+    </a>
+  }
+</div>

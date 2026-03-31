@@ -11,7 +11,7 @@ $footer-link-hover-shadow: drop-shadow(0 0 $padding-08 rgba(233,216,253,0.5));
   display: flex;
   padding: $padding-16 0;
   background: $gradient-toolbar;
-  box-shadow: 0 -$padding-02 $padding-08 rgba(30,34,64,0.08);
+  box-shadow: 0 (-$padding-02) $padding-08 rgba(30,34,64,0.08);
   align-items: center;
   justify-content: center;
 }
@@ -36,8 +36,9 @@ $footer-link-hover-shadow: drop-shadow(0 0 $padding-08 rgba(233,216,253,0.5));
 }
 
 .footer-carousel {
-  background: $gradient-toolbar;
   padding: $padding-08 0;
+  display: none;
+  background: $gradient-toolbar;
 
   .p-carousel-items-content {
     display: flex;
@@ -52,29 +53,21 @@ $footer-link-hover-shadow: drop-shadow(0 0 $padding-08 rgba(233,216,253,0.5));
     display: flex;
     padding: $padding-08 $padding-16;
     font-size: $font-size-18;
-    white-space: nowrap;
     background: transparent;
     align-items: center;
     margin-right: $padding-08;
+    flex-direction: column;
     justify-content: center;
   }
 
   .footer-link {
-    color: transparent;
-    display: flex;
+    display: block;
+    width: 100%;
     padding: $padding-08 $padding-24;
-    overflow: hidden;
     font-size: $font-size-18;
     text-align: center;
-    transition: filter 0.3s, transform 0.3s;
-    background: transparent;
-    font-weight: 700;
-    align-items: center;
     white-space: nowrap;
     text-overflow: ellipsis;
-    border-radius: $border-radius-32;
-    letter-spacing: 0.04em;
-    justify-content: center;
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -87,7 +80,7 @@ $footer-link-hover-shadow: drop-shadow(0 0 $padding-08 rgba(233,216,253,0.5));
   }
 }
 
-@media (min-width: 701px) {
+@media (min-width: 700px) {
   .footer-link {
     width: $p-footer-link-width;
     filter: none;
@@ -122,4 +115,10 @@ $footer-link-hover-shadow: drop-shadow(0 0 $padding-08 rgba(233,216,253,0.5));
     max-width: $padding-120;
     font-size: $font-size-16;
   }
+}
+
+// Show carousel and hide links when not enough space (heuristic: below 1320px)
+@media (max-width: 1320px) {
+  .footer-links { display: none; }
+  .footer-carousel { display: block; }
 }

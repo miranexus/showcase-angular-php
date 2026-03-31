@@ -17,7 +17,9 @@ export class ToolbarFooterComponent {
     { title: 'Perfume', url: '/products/perfume' },
     { title: 'Soap', url: '/products/soap' },
     { title: 'Gift Sets', url: '/products/gift-sets' },
-    { title: 'Special Offers', url: '/products/special-offers' }
+    { title: 'Special Offers', url: '/products/special-offers' },
+    { title: 'New Arrivals', url: '/products/new-arrivals' },
+    { title: 'Best Sellers', url: '/products/best-sellers' }
   ];
 
   isMobile: Observable<boolean>;

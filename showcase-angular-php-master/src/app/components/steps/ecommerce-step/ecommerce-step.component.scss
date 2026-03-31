@@ -45,6 +45,12 @@ mnx-ecommerce-step {
   }
 }
 
+@media (max-width: 700px) {
+  mnx-toolbar-footer {
+    display: none;
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   mnx-ecommerce-step {
     background-color: $mnx-cream-bg-dark;
