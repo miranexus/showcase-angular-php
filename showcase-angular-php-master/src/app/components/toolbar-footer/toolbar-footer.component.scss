@@ -79,6 +79,10 @@ $footer-link-hover-shadow: drop-shadow(0 0 $padding-08 rgba(233,216,253,0.5));
   }
 }
 
+.carousel-scroll-overlay {
+  @include carousel-scroll-overlay();
+}
+
 // Show carousel and hide links when not enough space (heuristic: below 1050px)
 @media (max-width: 1050px) {
   .footer-links { display: none; }

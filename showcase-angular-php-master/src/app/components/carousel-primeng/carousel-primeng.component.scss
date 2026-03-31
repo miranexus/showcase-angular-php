@@ -1,6 +1,9 @@
-@use 'variables' as vars;
+@use 'variables' as *;
 
 :host {
+  position: relative;
+  display: block;
+
   .step-item {
     flex: 1 1 0;
     width: 100%;
@@ -11,10 +14,10 @@
   }
 
   .step-item button {
-    width: vars.$percent-50;
+    width: $percent-50;
     margin: 0;
-    min-width: vars.$padding-32;
-    max-width: vars.$percent-50;
+    min-width: $padding-32;
+    max-width: $percent-50;
     white-space: nowrap;
     padding-left: 0;
     padding-right: 0;
@@ -24,6 +27,10 @@
     width: 100%;
     margin: 0;
     padding: 0;
+  }
+
+  .carousel-scroll-overlay {
+    @include carousel-scroll-overlay();
   }
 
   @media (max-width: 480px) {
@@ -36,7 +43,7 @@
       margin: 0;
       min-width: unset;
       max-width: 100%;
-      font-size: vars.$padding-15;
+      font-size: $padding-15;
       padding-left: 0;
       padding-right: 0;
     }
@@ -56,7 +63,7 @@
         left: 0;
         right: 0;
         margin: 0;
-        padding: 0 vars.$padding-02;
+        padding: 0 $padding-02;
       }
 
       .p-carousel-content,

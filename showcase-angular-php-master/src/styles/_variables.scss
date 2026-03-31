@@ -90,3 +90,15 @@ $box-shadow-btn: 0 $padding-01 $padding-04 rgba(59,130,246,0.08);
 
 $mnx-cream-bg: #fdf7ed;
 $mnx-cream-bg-dark: #2a2a2a;
+
+@mixin carousel-scroll-overlay($left: 50px, $right: 50px) {
+  position: absolute;
+  top: 0;
+  left: $left;
+  right: $right;
+  width: auto;
+  height: 100%;
+  z-index: 10;
+  background: transparent;
+  pointer-events: none; // Only enabled by JS during vertical touch scroll
+}

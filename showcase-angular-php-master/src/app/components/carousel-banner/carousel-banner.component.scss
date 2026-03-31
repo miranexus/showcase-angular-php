@@ -5,6 +5,7 @@ mnx-carousel-banner {
   display: block;
 
   .carousel-banner {
+    position: relative;
     width: 100%;
     overflow: hidden;
     border-radius: 0; // Remove all border radius from the carousel container
@@ -12,6 +13,10 @@ mnx-carousel-banner {
     p-carousel {
       width: 100%;
       display: block;
+    }
+
+    .carousel-scroll-overlay {
+      @include carousel-scroll-overlay();
     }
 
     .p-carousel-content {

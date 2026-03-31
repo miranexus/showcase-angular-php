@@ -6,6 +6,7 @@ $carousel-chevron-offset: $padding-08;
 :host {
   background: $mnx-cream-bg;
   display: block;
+  position: relative;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -58,6 +59,6 @@ $carousel-chevron-offset: $padding-08;
   padding: $padding-08;
 }
 
-mnx-card-product {
-  margin: 0;
+.carousel-scroll-overlay {
+  @include carousel-scroll-overlay();
 }
