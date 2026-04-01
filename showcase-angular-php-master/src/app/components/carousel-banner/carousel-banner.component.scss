@@ -3,42 +3,30 @@
 mnx-carousel-banner {
   width: 100%;
   display: block;
-
   .carousel-banner {
     position: relative;
     width: 100%;
     overflow: hidden;
-    border-radius: 0; // Remove all border radius from the carousel container
-
+    border-radius: 0;
     p-carousel {
       width: 100%;
       display: block;
     }
-
-    .carousel-scroll-overlay {
-      @include carousel-scroll-overlay();
-    }
-
     .p-carousel-content {
       position: relative;
       overflow: hidden;
     }
-
     .p-carousel-viewport {
       overflow: hidden;
     }
-
     .p-carousel-item-list {
       display: flex;
     }
-
     .p-carousel-item {
       flex: 0 0 100%;
     }
-
     .aspect-ratio-box {
       line-height: 0;
-
       img {
         width: 100%;
         height: auto;
@@ -47,7 +35,6 @@ mnx-carousel-banner {
         border-radius: 0;
       }
     }
-
     .p-carousel-prev-button,
     .p-carousel-next-button {
       top: 50%;
@@ -61,25 +48,24 @@ mnx-carousel-banner {
       background: rgba(0, 0, 0, 0.35);
       transition: background 0.2s ease;
       border-radius: 50%;
-
       &:hover {
         background: rgba(0, 0, 0, 0.55);
       }
     }
-
     .p-carousel-prev-button {
       left: $padding-12;
     }
-
     .p-carousel-next-button {
       right: $padding-12;
     }
   }
-
   .banner-text {
     color: $color-text;
     padding: $padding-16 $padding-20;
     font-size: $padding-15;
     line-height: 1.6;
+  }
+  .carousel-scroll-overlay {
+    @include carousel-scroll-overlay();
   }
 }

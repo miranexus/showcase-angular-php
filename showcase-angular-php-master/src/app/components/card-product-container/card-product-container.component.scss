@@ -8,21 +8,13 @@ $carousel-chevron-offset: $padding-08;
   display: block;
   position: relative;
 }
-
-@media (prefers-color-scheme: dark) {
-  :host {
-    background: $mnx-cream-bg-dark;
-  }
-}
-
-:host ::ng-deep .p-carousel {
+.p-carousel {
   width: 100vw;
   margin: 0 auto;
   max-width: 100vw;
   transform: none;
 }
-
-:host ::ng-deep .p-carousel-items-content {
+.p-carousel-items-content {
   width: 100vw;
   margin: 0 auto;
   display: flex;
@@ -32,33 +24,35 @@ $carousel-chevron-offset: $padding-08;
   align-items: center;
   justify-content: center;
 }
-
-:host ::ng-deep .p-carousel-content {
+.p-carousel-content {
   margin-bottom: $padding-20;
 }
-
-:host ::ng-deep .p-carousel-prev-button,
-:host ::ng-deep .p-carousel-next-button {
+.p-carousel-prev-button,
+.p-carousel-next-button {
   top: 50%;
   transform: none;
 }
-:host ::ng-deep .p-carousel-prev-button {
+.p-carousel-prev-button {
   inset-inline-start: $carousel-chevron-offset;
 }
-:host ::ng-deep .p-carousel-next-button {
+.p-carousel-next-button {
   inset-inline-end: $carousel-chevron-offset;
 }
-
-:host ::ng-deep .p-carousel-item {
+.p-carousel-item {
   box-sizing: border-box;
   padding-inline-start: 0;
   padding-inline-end: 0;
 }
-
-:host ::ng-deep .p-card {
+.p-card {
   padding: $padding-08;
 }
 
 .carousel-scroll-overlay {
   @include carousel-scroll-overlay();
+}
+
+@media (prefers-color-scheme: dark) {
+  :host {
+    background: $mnx-cream-bg-dark;
+  }
 }

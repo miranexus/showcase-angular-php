@@ -100,5 +100,5 @@ $mnx-cream-bg-dark: #2a2a2a;
   height: 100%;
   z-index: 10;
   background: transparent;
-  pointer-events: none; // Only enabled by JS during vertical touch scroll
+  pointer-events: auto;
 }
