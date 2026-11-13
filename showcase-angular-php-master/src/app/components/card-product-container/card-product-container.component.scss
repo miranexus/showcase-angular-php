@@ -47,12 +47,14 @@ $carousel-chevron-offset: $padding-08;
   padding: $padding-08;
 }
 
-.carousel-scroll-overlay {
-  @include carousel-scroll-overlay();
-}
-
 @media (prefers-color-scheme: dark) {
   :host {
     background: $mnx-cream-bg-dark;
+  }
+}
+
+@media (max-width: 1050px) {
+  .carousel-scroll-overlay {
+    @include carousel-scroll-overlay();
   }
 }

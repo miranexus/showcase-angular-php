@@ -5,11 +5,15 @@ $color-light: #faf9fd;
 $p-footer-link-width: 200px;
 $footer-link-hover-shadow: drop-shadow(0 0 $padding-08 rgba(233,216,253,0.5));
 
+:host {
+  display: block;
+  position: relative;
+}
+
 .footer-links {
   gap: $padding-32;
-  width: 100vw;
+  width: 100%;
   display: flex;
-  padding: $padding-16 0;
   background: $gradient-toolbar;
   box-shadow: 0 (-$padding-02) $padding-08 rgba(30,34,64,0.08);
   align-items: center;
@@ -79,12 +83,11 @@ $footer-link-hover-shadow: drop-shadow(0 0 $padding-08 rgba(233,216,253,0.5));
   }
 }
 
-.carousel-scroll-overlay {
-  @include carousel-scroll-overlay();
-}
-
 // Show carousel and hide links when not enough space (heuristic: below 1050px)
 @media (max-width: 1050px) {
   .footer-links { display: none; }
   .footer-carousel { display: block; }
+  .carousel-scroll-overlay {
+    @include carousel-scroll-overlay();
+  }
 }

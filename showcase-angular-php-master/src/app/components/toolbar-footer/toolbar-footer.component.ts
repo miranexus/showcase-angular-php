@@ -12,6 +12,11 @@ import { CarouselModule } from 'primeng/carousel';
   imports: [CommonModule, CarouselModule],
 })
 export class ToolbarFooterComponent {
+  readonly responsiveOptions = [
+    { breakpoint: '700px', numVisible: 2, numScroll: 1 },
+    { breakpoint: '500px', numVisible: 1, numScroll: 1 }
+  ];
+
   // Product-related links (update as needed)
   @Input() links: { title: string; image?: string; description?: string; url?: string }[] = [
     { title: 'Perfume', url: '/products/perfume' },

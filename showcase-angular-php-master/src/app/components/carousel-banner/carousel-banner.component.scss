@@ -65,7 +65,10 @@ mnx-carousel-banner {
     font-size: $padding-15;
     line-height: 1.6;
   }
-  .carousel-scroll-overlay {
-    @include carousel-scroll-overlay();
+
+  @media (max-width: 1050px) {
+    .carousel-scroll-overlay {
+      @include carousel-scroll-overlay();
+    }
   }
 }
