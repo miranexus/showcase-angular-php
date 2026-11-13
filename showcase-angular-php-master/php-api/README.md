@@ -41,6 +41,37 @@ php -S localhost:8000 -t php-api
 
 With the secret configured, check the API at [http://localhost:8000/index.php?path=/health](http://localhost:8000/index.php?path=/health). The health endpoint does not test the database connection.
 
+## Seed and try the product API
+
+The storefront already fetches a product JSON file in sample mode. To see an actual request to PHP instead, seed a separate local catalogue and enable API mode:
+
+1. From `showcase-angular-php-master`, create the local seed file:
+
+   ```bash
+   php php-api/scripts/seed-products.php
+   ```
+
+   This copies the tracked `php-api/data/products.json` sample into the ignored `php-api/data/seeded-products.json`. Existing seeded data is never overwritten unless you explicitly run the same command with `--force`.
+
+2. Start the PHP server with `PRODUCT_CATALOG_SOURCE=seeded`. For PowerShell:
+
+   ```powershell
+   $env:PRODUCT_CATALOG_SOURCE = 'seeded'
+   php -S localhost:8000 -t php-api
+   ```
+
+   For a Unix shell:
+
+   ```bash
+   PRODUCT_CATALOG_SOURCE=seeded php -S localhost:8000 -t php-api
+   ```
+
+   Open [http://localhost:8000/index.php?path=/products](http://localhost:8000/index.php?path=/products) to inspect the JSON response. No database or JWT secret is needed for this read-only route.
+
+3. In `public/catalog-config.js`, change `source` to `'api'` and `apiUrl` to `'http://localhost:8000/index.php'`, then run `npm start` in another terminal. Open the storefront at `http://localhost:4200/angular/showcase-angular-php/`; the browser's Network tab will show the `/products` request and response. Restart the Angular development server if it was already running.
+
+To return to the default bundled catalogue, set `source` back to `'sample'`. Do not deploy the local API URL in your production configuration. The PHP server uses the tracked sample JSON when `PRODUCT_CATALOG_SOURCE` is unset or `sample`; when set to `seeded`, a missing or invalid seed file returns an error rather than falling back.
+
 ## Endpoints
 
 Pass the route in the `path` query parameter:

@@ -51,7 +51,14 @@ if ($path === '/products') {
         echo json_encode(['error' => 'Method not allowed']);
         exit;
     }
-    $dataFile = __DIR__ . '/data/products.json';
+    $catalogueSource = getenv('PRODUCT_CATALOG_SOURCE');
+    if ($catalogueSource !== false && $catalogueSource !== '' && !in_array($catalogueSource, ['sample', 'seeded'], true)) {
+        error_log('Invalid PRODUCT_CATALOG_SOURCE configuration');
+        http_response_code(500);
+        echo json_encode(['error' => 'Product catalogue configuration invalid']);
+        exit;
+    }
+    $dataFile = __DIR__ . '/data/' . ($catalogueSource === 'seeded' ? 'seeded-products.json' : 'products.json');
     $data = is_readable($dataFile) ? file_get_contents($dataFile) : false;
     $products = $data === false ? null : json_decode($data, true);
     if (!is_array($products) || !array_is_list($products)) {

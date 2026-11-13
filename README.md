@@ -67,6 +67,8 @@ On Windows, `npm run build` additionally copies the provided Apache rewrite conf
 
 The PHP API is in [`showcase-angular-php-master/php-api`](showcase-angular-php-master/php-api). It supports a read-only `/products` catalogue, `/health`, a demo `/login`, and CRUD routes for `prime-ng-data`. The product endpoint currently reads the same sample JSON bundled into the frontend; a future PHP backend can supply the same product contract from a database. See the [API setup guide](showcase-angular-php-master/php-api/README.md) for setup and the runtime switch.
 
+To try a seeded JSON catalogue served by PHP and inspect the request in your browser, follow [Seed and try the product API](showcase-angular-php-master/php-api/README.md#seed-and-try-the-product-api). Bundled products remain the default.
+
 > **Important:** The API is a demo, not production-ready. Its CRUD routes currently execute before the authentication and rate-limiting code, and the login uses hard-coded demo credentials. Do not expose it publicly or use it for sensitive data without implementing and verifying proper authentication, authorization and other production protections.
 
 ## Project structure
