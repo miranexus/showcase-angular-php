@@ -58,6 +58,25 @@ mnx-toolbar-header {
     }
   }
 
+  .mobile-search {
+    display: flex;
+    gap: $padding-08;
+    padding: $padding-08 $padding-16;
+    background: $gradient-toolbar;
+
+    input {
+      flex: 1;
+      min-width: 0;
+    }
+
+    button {
+      padding: $padding-08 $padding-12;
+      border: 0;
+      border-radius: $border-radius-06;
+      cursor: pointer;
+    }
+  }
+
   .company-logo {
     gap: $padding-08;
     cursor: pointer;

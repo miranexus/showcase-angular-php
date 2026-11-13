@@ -52,9 +52,3 @@ $carousel-chevron-offset: $padding-08;
     background: $mnx-cream-bg-dark;
   }
 }
-
-@media (max-width: 1050px) {
-  .carousel-scroll-overlay {
-    @include carousel-scroll-overlay();
-  }
-}

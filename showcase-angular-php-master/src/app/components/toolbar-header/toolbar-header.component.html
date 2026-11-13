@@ -7,13 +7,19 @@
     </div>
   </div>
   <div class="p-toolbar-group-center">
-    <div class="search-bar">
+    <form class="search-bar" (ngSubmit)="showResults()">
       <i class="pi pi-search search-icon"></i>
-      <input type="text" pInputText placeholder="Search products..." />
-    </div>
+      <input type="search" pInputText name="search" aria-label="Search products" placeholder="Search products..." [ngModel]="store.search()" (ngModelChange)="store.search.set($event)" />
+    </form>
   </div>
   <div class="p-toolbar-group-end">
-    <p-button icon="pi pi-search" [rounded]="true" [text]="true" styleClass="search-btn-mobile" />
-    <p-button icon="pi pi-shopping-cart" [rounded]="true" [text]="true" styleClass="cart-btn" />
+    <p-button icon="pi pi-search" [rounded]="true" [text]="true" styleClass="search-btn-mobile" ariaLabel="Toggle product search" [attr.aria-expanded]="mobileSearchOpen" (onClick)="mobileSearchOpen = !mobileSearchOpen" />
+    <mnx-shopping-cart></mnx-shopping-cart>
   </div>
 </p-toolbar>
+@if (mobileSearchOpen) {
+  <form class="mobile-search" (ngSubmit)="showResults()">
+    <input type="search" pInputText name="mobileSearch" aria-label="Search products" placeholder="Search products..." [ngModel]="store.search()" (ngModelChange)="store.search.set($event)">
+    <button type="submit">Search</button>
+  </form>
+}

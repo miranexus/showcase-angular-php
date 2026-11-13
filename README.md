@@ -18,7 +18,7 @@
 
 This project brings together a storefront-inspired interface and examples of PrimeNG components. The storefront includes responsive product carousels, a banner and category links; the project also includes table, dialog and select examples. A separate PHP API provides a health endpoint and basic MySQL-backed CRUD endpoints.
 
-The storefront products are sample data in the Angular application. The PrimeNG data service is configured to use the deployed PHP API by default; running the Angular app does not automatically start a local API.
+The storefront defaults to bundled sample products, with search, category, featured and special-offer filters. Its demo cart is saved in browser storage and supports quantity changes, removal and a euro subtotal; it has no checkout, payment or server-side cart. Sample prices and offers are illustrative, not real prices or promotions. A runtime setting can switch the catalogue to a PHP endpoint without rebuilding; see [PHP API](#php-api). The separate PrimeNG data service is configured to use its deployed PHP API by default.
 
 ## Tech stack
 
@@ -65,7 +65,7 @@ On Windows, `npm run build` additionally copies the provided Apache rewrite conf
 
 ## PHP API
 
-The PHP API is in [`showcase-angular-php-master/php-api`](showcase-angular-php-master/php-api). It supports `/health`, a demo `/login`, and CRUD routes for `prime-ng-data`. See the [API setup guide](showcase-angular-php-master/php-api/README.md) for local configuration, database schema and endpoint details.
+The PHP API is in [`showcase-angular-php-master/php-api`](showcase-angular-php-master/php-api). It supports a read-only `/products` catalogue, `/health`, a demo `/login`, and CRUD routes for `prime-ng-data`. The product endpoint currently reads the same sample JSON bundled into the frontend; a future PHP backend can supply the same product contract from a database. See the [API setup guide](showcase-angular-php-master/php-api/README.md) for setup and the runtime switch.
 
 > **Important:** The API is a demo, not production-ready. Its CRUD routes currently execute before the authentication and rate-limiting code, and the login uses hard-coded demo credentials. Do not expose it publicly or use it for sensitive data without implementing and verifying proper authentication, authorization and other production protections.
 

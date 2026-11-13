@@ -6,12 +6,59 @@
   <mnx-carousel-banner></mnx-carousel-banner>
   <mnx-toolbar-footer></mnx-toolbar-footer>
 
-  <!-- Perfume Cards -->
-  <h2 class="collection-title perfume-title">Perfume Collection</h2>
-  <mnx-card-product-container [cards]="perfumeCards"></mnx-card-product-container>
+  @if (loading) {
+    <p class="catalogue-status" role="status">Loading products...</p>
+  } @else if (loadError) {
+    <div class="catalogue-status" role="alert">
+      <p>Products could not be loaded. Please try again.</p>
+      <button type="button" (click)="loadProducts()">Retry</button>
+    </div>
+  } @else {
+    @if (perfumeCards.length) {
+      <h2 class="collection-title perfume-title">Perfume Collection</h2>
+      <mnx-card-product-container [cards]="perfumeCards"></mnx-card-product-container>
+    }
 
-  <!-- Soap Cards -->
-  <h2 class="collection-title soap-title">Soap Collection</h2>
-  <mnx-card-product-container [cards]="soapCards"></mnx-card-product-container>
+    @if (soapCards.length) {
+      <h2 class="collection-title soap-title">Soap Collection</h2>
+      <mnx-card-product-container [cards]="soapCards"></mnx-card-product-container>
+    }
+
+    <section class="catalogue" aria-labelledby="catalogue-heading">
+      <div class="catalogue-header">
+        <div class="catalogue-intro">
+          <h2 id="catalogue-heading" class="collection-title perfume-title">Browse Products</h2>
+          <p>Discover fragrances and soaps for every occasion.</p>
+          @if (isSampleCatalog) {
+            <p class="catalogue-notice">Sample products and offers are for demonstration only.</p>
+          }
+        </div>
+        <div class="catalogue-filters">
+        <label>Category
+          <select [(ngModel)]="selectedCategory">
+            <option value="">All categories</option>
+            @for (category of categories; track category) {
+              <option [value]="category">{{ category }}</option>
+            }
+          </select>
+        </label>
+        <label>Collection
+          <select [(ngModel)]="selectedCollection">
+            <option value="all">All products</option>
+            <option value="featured">Featured</option>
+            <option value="offers">Special offers</option>
+          </select>
+        </label>
+        </div>
+      </div>
+      <div class="catalogue-grid">
+        @for (product of filteredProducts; track product.id) {
+          <mnx-card-product [product]="product" [image]="product.image" [title]="product.title" [description]="product.description"></mnx-card-product>
+        } @empty {
+          <p class="catalogue-status">No products match these filters.</p>
+        }
+      </div>
+    </section>
+  }
 
 </div>

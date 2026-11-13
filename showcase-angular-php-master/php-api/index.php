@@ -44,6 +44,38 @@ header('Content-Type: application/json');
 
 $path = $_GET['path'] ?? ($_SERVER['PATH_INFO'] ?? '/health');
 
+if ($path === '/products') {
+    if ($_SERVER['REQUEST_METHOD'] !== 'GET') {
+        header('Allow: GET, OPTIONS');
+        http_response_code(405);
+        echo json_encode(['error' => 'Method not allowed']);
+        exit;
+    }
+    $dataFile = __DIR__ . '/data/products.json';
+    $data = is_readable($dataFile) ? file_get_contents($dataFile) : false;
+    $products = $data === false ? null : json_decode($data, true);
+    if (!is_array($products) || !array_is_list($products)) {
+        error_log('Unable to read or decode product catalogue: ' . $dataFile);
+        http_response_code(500);
+        echo json_encode(['error' => 'Product catalogue unavailable']);
+        exit;
+    }
+    $category = $_GET['category'] ?? '';
+    if (!is_string($category)) {
+        http_response_code(400);
+        echo json_encode(['error' => 'Invalid category']);
+        exit;
+    }
+    $category = trim($category);
+    if ($category !== '') {
+        $products = array_values(array_filter($products, static fn($product) =>
+            is_array($product) && ($product['category'] ?? null) === $category
+        ));
+    }
+    echo json_encode($products);
+    exit;
+}
+
 // --- JWT secret (should be in .env in production) ---
 $jwtSecret = getenv('API_JWT_SECRET');
 if ($jwtSecret === false || $jwtSecret === '') {

@@ -1,0 +1,59 @@
+<button type="button" class="cart-trigger" (click)="visible = true" [attr.aria-label]="'Shopping cart, ' + store.count() + ' items'">
+  <i class="pi pi-shopping-cart" aria-hidden="true"></i>
+  @if (store.count()) {
+    <span class="cart-count">{{ store.count() }}</span>
+  }
+</button>
+<p-dialog header="Your shopping cart" [(visible)]="visible" [modal]="true" [dismissableMask]="true" appendTo="body" styleClass="shopping-cart-dialog" [style]="{ width: 'min(94vw, 520px)' }">
+  @if (store.storageError()) {
+    <p class="cart-warning" role="alert">Your cart could not be saved in this browser. Changes may not persist after you leave.</p>
+  }
+  @if (store.cart().length === 0) {
+    <div class="cart-empty">
+      <span class="cart-empty-icon"><i class="pi pi-shopping-bag" aria-hidden="true"></i></span>
+      <h3>Your cart is empty</h3>
+      <p>Discover something lovely and add it to your cart.</p>
+      <button type="button" class="continue-shopping" (click)="visible = false">Continue browsing</button>
+    </div>
+  } @else {
+    <p class="cart-summary">{{ store.count() }} {{ store.count() === 1 ? 'item' : 'items' }} in your cart</p>
+    <ul class="cart-items">
+      @for (item of store.cart(); track item.product.id) {
+        <li class="cart-item">
+          <div class="cart-image">
+            <img [src]="item.product.image" [alt]="item.product.title" width="80" height="80">
+          </div>
+          <div class="cart-details">
+            <strong class="cart-product-title">{{ item.product.title }}</strong>
+            <span class="cart-description">{{ item.product.description }}</span>
+            @if (item.product.priceCents !== undefined) {
+              <span class="cart-unit-price">{{ item.product.priceCents / 100 | currency:'EUR' }} each</span>
+            } @else {
+              <span class="cart-unit-price">Price unavailable</span>
+            }
+            <div class="cart-actions">
+              <div class="quantity-control">
+                <button type="button" (click)="store.changeQuantity(item.product.id, -1)" [attr.aria-label]="'Decrease quantity of ' + item.product.title">−</button>
+                <span [attr.aria-label]="'Quantity ' + item.quantity">{{ item.quantity }}</span>
+                <button type="button" (click)="store.changeQuantity(item.product.id, 1)" [attr.aria-label]="'Increase quantity of ' + item.product.title">+</button>
+              </div>
+              <button type="button" class="remove" (click)="store.remove(item.product.id)" [attr.aria-label]="'Remove ' + item.product.title + ' from cart'">Remove</button>
+            </div>
+          </div>
+          @if (item.product.priceCents !== undefined) {
+            <strong class="cart-line-total">{{ item.product.priceCents * item.quantity / 100 | currency:'EUR' }}</strong>
+          }
+        </li>
+      }
+    </ul>
+    <div class="cart-subtotal">
+      <strong>Subtotal</strong>
+      @if (store.subtotalCents() !== null) {
+        <strong>{{ (store.subtotalCents() ?? 0) / 100 | currency:'EUR' }}</strong>
+      } @else {
+        <span>Unavailable until all items have a price</span>
+      }
+    </div>
+    <p class="cart-note"><i class="pi pi-info-circle" aria-hidden="true"></i> Illustrative prices only. Checkout and payment are not available.</p>
+  }
+</p-dialog>

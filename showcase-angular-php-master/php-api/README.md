@@ -1,12 +1,12 @@
 # PHP API
 
-This directory contains a small PHP API for the Angular showcase. It uses PDO to access a MySQL table called `primeNgData`.
+This directory contains a small PHP API for the Angular showcase. The product catalogue reads `data/products.json`; the separate PrimeNG data endpoints use PDO and a MySQL table called `primeNgData`.
 
 > **Not production-ready:** The CRUD routes are dispatched before the authentication and rate-limiting code, so they are not protected by either. The login endpoint also uses hard-coded demo credentials. Do not expose this API publicly or use it with sensitive data until authentication, authorization and other production protections have been implemented and verified.
 
 ## Local setup
 
-You need PHP with PDO MySQL and a MySQL database. Create `php-api/.env` locally with values appropriate for your environment:
+For the product catalogue alone, PHP 8.1 or later is sufficient. The other endpoints require configuration; for MySQL-backed CRUD you also need PDO MySQL and a MySQL database. Create `php-api/.env` locally with values appropriate for those endpoints:
 
 ```dotenv
 API_JWT_SECRET=replace-with-a-long-random-secret
@@ -47,6 +47,7 @@ Pass the route in the `path` query parameter:
 
 | Method | Path | Purpose |
 | --- | --- | --- |
+| GET | `/products` | List sample products; optionally filter with `category` |
 | GET | `/health` | Return API status and timestamp |
 | POST | `/login` | Issue a demo JWT for the hard-coded demo user |
 | GET | `/prime-ng-data` | List records |
@@ -58,6 +59,19 @@ Pass the route in the `path` query parameter:
 For create and update requests, send a JSON object with `title`, `description` and `published`. The JWT secret must be configured even for the health endpoint.
 
 ## Angular integration
+
+The storefront defaults to the bundled `assets/catalogue/products.json`, copied from `php-api/data/products.json` at build time. To use the PHP catalogue, edit `public/catalog-config.js` during development, or `catalog-config.js` in the deployed Angular directory after building:
+
+```js
+window.__PRODUCT_CATALOG__ = {
+  source: 'api',
+  apiUrl: 'http://localhost:8000/index.php'
+};
+```
+
+Set `apiUrl` to the deployed PHP `index.php` URL when going live, and deploy `php-api/data/products.json` alongside the API. Set `source` back to `sample` to use the bundled catalogue. The browser requests `?path=/products`; if the request fails or the response is invalid, the storefront shows an error and retry button rather than silently switching sources.
+
+The endpoint returns a JSON array with unique numeric `id`, string `title`, `description`, `image` and `category`, and boolean `featured` and `specialOffer` fields. The optional `priceCents` is a non-negative integer in euro cents (up to 100000000); omit it when a price is unavailable. The cart does not calculate a subtotal until every item has a price. Image paths are resolved relative to the Angular app's base URL. A future database-backed PHP endpoint can replace the JSON file while keeping this contract. The included prices, featured items and offer flags are demo data, not real prices or promotions.
 
 The Angular `PrimeNgDataService` defaults to the deployed API. To use a local API, set `window.__API_BASE_URL__` to `http://localhost:8000/index.php` before the Angular application starts. CORS origins are currently hard-coded in `index.php`; they include `http://localhost:4200`. Change the allowlist in code if using another frontend origin.
 

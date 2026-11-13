@@ -19,6 +19,9 @@
     @if (description) {
       <div class="product-description">{{ description }}</div>
     }
+    @if (product && product.priceCents !== undefined) {
+      <div class="product-price">{{ product.priceCents / 100 | currency:'EUR' }}</div>
+    }
     @if (showActions) {
       <div class="product-review-stars">
         <p-rating
@@ -28,7 +31,7 @@
           [readonly]="true"
         ></p-rating>
       </div>
-      <button pButton type="button" class="add-to-cart-btn">Add to cart</button>
+      <button pButton type="button" class="add-to-cart-btn" [disabled]="!product" (click)="product && storefront.add(product)" [attr.aria-label]="'Add ' + title + ' to cart'">Add to cart</button>
     }
   </p-card>
 }

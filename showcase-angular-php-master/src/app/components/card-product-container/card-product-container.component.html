@@ -1,4 +1,3 @@
-<div class="carousel-scroll-overlay"></div>
 <p-carousel
   [value]="cards"
   [circular]="true"
@@ -13,6 +12,7 @@
       [image]="card.image"
       [title]="card.title"
       [description]="card.description"
+      [product]="card"
       [showActions]="card.showActions !== false"
     ></mnx-card-product>
   </ng-template>

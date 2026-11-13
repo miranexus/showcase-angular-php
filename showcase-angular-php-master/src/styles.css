@@ -5,3 +5,26 @@ html, body {
   padding: 0;
   height: 100%;
 }
+
+.shopping-cart-dialog.p-dialog {
+  overflow: hidden;
+  border: 0;
+  border-radius: 20px;
+  box-shadow: 0 24px 70px rgba(30, 20, 42, 0.25);
+}
+
+.shopping-cart-dialog .p-dialog-header {
+  padding: 24px 24px 16px;
+  background: #fdf7ed;
+  color: #33283c;
+}
+
+.shopping-cart-dialog .p-dialog-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.shopping-cart-dialog .p-dialog-content {
+  padding: 0 24px 24px;
+  background: #fdf7ed;
+}
