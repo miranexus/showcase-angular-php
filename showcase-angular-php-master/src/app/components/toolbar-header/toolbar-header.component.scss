@@ -266,6 +266,8 @@ mnx-toolbar-header {
     .hamburger-btn,
     .search-btn-mobile {
       display: inline-flex;
+      align-items: center;
+      justify-content: center;
 
       .p-button-icon {
         font-size: $font-size-24;
