@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { ChangeDetectorRef, Component, inject } from '@angular/core';
 import { DialogModule } from 'primeng/dialog';
 import { CurrencyPipe } from '@angular/common';
 import { StorefrontService } from '../../services/storefront.service';
@@ -12,5 +12,11 @@ import { StorefrontService } from '../../services/storefront.service';
 })
 export class ShoppingCartComponent {
   readonly store = inject(StorefrontService);
+  private readonly changeDetector = inject(ChangeDetectorRef);
   visible = false;
+
+  onVisibleChange(visible: boolean): void {
+    this.visible = visible;
+    this.changeDetector.markForCheck();
+  }
 }

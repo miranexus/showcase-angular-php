@@ -11,7 +11,7 @@
   min-height: 44px;
   border: 0;
   background: transparent;
-  color: #e9d8fd;
+  color: #fffaf3;
   cursor: pointer;
 
   .pi {
@@ -20,7 +20,7 @@
 }
 
 .cart-trigger:focus-visible {
-  outline: 2px solid #e9d8fd;
+  outline: 2px solid #dbb878;
   border-radius: 6px;
 }
 
@@ -31,15 +31,15 @@
   min-width: 20px;
   padding: 2px 4px;
   border-radius: 20px;
-  background: #e9d8fd;
+  background: #e8c996;
   color: #30243c;
   font-size: 12px;
   font-weight: 700;
 }
 
 .cart-summary {
-  margin: 0 0 16px;
-  color: #706579;
+  margin: 0 0 12px;
+  color: #6a5d63;
   font-size: 0.875rem;
 }
 
@@ -55,16 +55,16 @@
   gap: 16px;
   align-items: start;
   padding: 16px 0;
-  border-bottom: 1px solid #ece6eb;
+  border-bottom: 1px solid #e8dccb;
 }
 
 .cart-image {
   display: grid;
   place-items: center;
   overflow: hidden;
-  border: 1px solid #eee6e0;
+  border: 1px solid #e8dccb;
   border-radius: 12px;
-  background: #fff;
+  background: #fffdf9;
 
   img {
     display: block;
@@ -87,7 +87,7 @@
 
 .cart-description,
 .cart-unit-price {
-  color: #706579;
+  color: #6a5d63;
   font-size: 0.8rem;
   line-height: 1.4;
 }
@@ -103,13 +103,13 @@
 .quantity-control {
   display: inline-flex;
   align-items: center;
-  border: 1px solid #e4dbe3;
+  border: 1px solid #dfcfb9;
   border-radius: 9px;
-  background: #fff;
+  background: #fffdf9;
 
   button {
-    width: 34px;
-    height: 34px;
+    width: 44px;
+    height: 44px;
     border: 0;
     background: transparent;
     color: #49364f;
@@ -126,11 +126,11 @@
 }
 
 .remove {
-  min-height: 34px;
+  min-height: 44px;
   padding: 0;
   border: 0;
   background: transparent;
-  color: #76516d;
+  color: #60455a;
   font-size: 0.8rem;
   text-decoration: underline;
   cursor: pointer;
@@ -138,11 +138,11 @@
 
 .quantity-control button:hover,
 .remove:hover {
-  color: #ad648d;
+  color: #967347;
 }
 
 button:focus-visible {
-  outline: 2px solid #76518c;
+  outline: 2px solid #a77c4a;
   outline-offset: 2px;
 }
 
@@ -153,14 +153,21 @@ button:focus-visible {
   padding-top: 20px;
   color: #33283c;
   font-size: 1.05rem;
+
+  span {
+    max-width: 220px;
+    text-align: right;
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
 }
 
 .cart-note,
 .cart-warning {
   padding: 12px;
   border-radius: 10px;
-  background: #f5eff7;
-  color: #63566b;
+  background: #f5ecde;
+  color: #5f514c;
   font-size: 0.8rem;
   line-height: 1.5;
 }
@@ -172,11 +179,14 @@ button:focus-visible {
 .cart-empty {
   padding: 12px 0 20px;
   text-align: center;
-  color: #706579;
+  color: #6a5d63;
 
   h3 {
     margin: 16px 0 8px;
     color: #33283c;
+    font-family: Georgia, serif;
+    font-size: 1.35rem;
+    font-weight: 400;
   }
 
   p {
@@ -191,8 +201,8 @@ button:focus-visible {
   height: 64px;
   place-items: center;
   border-radius: 50%;
-  background: #f5eff7;
-  color: #76518c;
+  background: #f1e4d2;
+  color: #745a40;
 
   .pi {
     font-size: 1.6rem;
@@ -200,6 +210,7 @@ button:focus-visible {
 }
 
 .continue-shopping {
+  min-height: 44px;
   padding: 10px 18px;
   border: 0;
   border-radius: 24px;
@@ -207,6 +218,10 @@ button:focus-visible {
   color: white;
   font-weight: 600;
   cursor: pointer;
+}
+
+.continue-shopping:hover {
+  background: #68506d;
 }
 
 @media (max-width: 420px) {

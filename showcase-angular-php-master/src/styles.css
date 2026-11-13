@@ -6,25 +6,46 @@ html, body {
   height: 100%;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
 .shopping-cart-dialog.p-dialog {
   overflow: hidden;
-  border: 0;
+  border: 1px solid #e8dccb;
   border-radius: 20px;
-  box-shadow: 0 24px 70px rgba(30, 20, 42, 0.25);
+  box-shadow: 0 24px 70px rgba(30, 20, 42, 0.22);
+  font-family: 'Poppins', sans-serif;
 }
 
 .shopping-cart-dialog .p-dialog-header {
-  padding: 24px 24px 16px;
+  padding: 24px 24px 12px;
   background: #fdf7ed;
   color: #33283c;
 }
 
 .shopping-cart-dialog .p-dialog-title {
-  font-size: 1.25rem;
-  font-weight: 700;
+  font-family: Georgia, serif;
+  font-size: 1.65rem;
+  font-weight: 400;
 }
 
 .shopping-cart-dialog .p-dialog-content {
-  padding: 0 24px 24px;
+  padding: 0 24px 28px;
   background: #fdf7ed;
+  color: #33283c;
+}
+
+.shopping-cart-dialog .p-dialog-header-actions button:focus-visible {
+  outline: 2px solid #a77c4a;
+  outline-offset: 2px;
+}
+
+@media (max-width: 420px) {
+  .shopping-cart-dialog .p-dialog-header { padding: 20px 18px 12px; }
+  .shopping-cart-dialog .p-dialog-content { padding: 0 18px 20px; }
 }

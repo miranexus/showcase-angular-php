@@ -18,7 +18,7 @@
 
 This project brings together a storefront-inspired interface and examples of PrimeNG components. The storefront includes responsive product carousels, a banner and category links; the project also includes table, dialog and select examples. A separate PHP API provides a health endpoint and basic MySQL-backed CRUD endpoints.
 
-The storefront defaults to bundled sample products, with search, category, featured and special-offer filters. Its demo cart is saved in browser storage and supports quantity changes, removal and a euro subtotal; it has no checkout, payment or server-side cart. Sample prices and offers are illustrative, not real prices or promotions. A runtime setting can switch the catalogue to a PHP endpoint without rebuilding; see [PHP API](#php-api). The separate PrimeNG data service is configured to use its deployed PHP API by default.
+The storefront defaults to bundled sample products, with search, category, featured and special-offer filters. Collection navigation and the mobile menu lead to these filters; the product and banner carousels are manually controlled. Its demo cart is saved in browser storage and supports quantity changes, removal and a euro subtotal; it has no checkout, payment or server-side cart. Sample prices and offers are illustrative, not real prices or promotions. A runtime setting can switch the catalogue to a PHP endpoint without rebuilding; see [PHP API](#php-api). The separate PrimeNG data service is configured to use its deployed PHP API by default.
 
 ## Tech stack
 

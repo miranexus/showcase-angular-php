@@ -24,6 +24,7 @@ describe('StorefrontService cart', () => {
     store.add(product);
     store.add(product);
     expect(store.count()).toBe(2);
+    expect(store.cartMessage()).toContain('Perfume added to your cart');
     expect(store.subtotalCents()).toBe(9998);
     expect(JSON.parse(localStorage.getItem('miranexus-showcase-cart') ?? '[]')[0].quantity).toBe(2);
     store.changeQuantity(product.id, -1);
@@ -31,6 +32,18 @@ describe('StorefrontService cart', () => {
     expect(store.subtotalCents()).toBe(4999);
     store.remove(product.id);
     expect(store.cart()).toEqual([]);
+  });
+
+  it('clears search and applies the requested collection filters', () => {
+    const store = TestBed.inject(StorefrontService);
+    store.search.set('rose');
+    store.browse('Soap', 'offers');
+    expect(store.search()).toBe('');
+    expect(store.category()).toBe('Soap');
+    expect(store.collection()).toBe('offers');
+    store.browse();
+    expect(store.category()).toBe('');
+    expect(store.collection()).toBe('all');
   });
 
   it('restores a saved cart', () => {

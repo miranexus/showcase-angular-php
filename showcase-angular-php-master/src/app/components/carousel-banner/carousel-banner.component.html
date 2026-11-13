@@ -1,10 +1,16 @@
 <div class="carousel-banner">
   <div class="carousel-scroll-overlay"></div>
-  <p-carousel [value]="currentImages" [numVisible]="1" [numScroll]="1" [circular]="true" [autoplayInterval]="3000" [showIndicators]="false">
+  <p-carousel [value]="currentImages" [numVisible]="1" [numScroll]="1" [circular]="true" [showIndicators]="false">
     <ng-template pTemplate="item" let-image>
       <div class="aspect-ratio-box">
-        <img ngSrc="{{image}}" alt="Banner Image" width="1000" height="190" priority />
+        <img ngSrc="{{image}}" alt="" width="1000" height="190" priority />
       </div>
     </ng-template>
   </p-carousel>
+  <div class="hero-copy">
+    <span>THE MIRANEXUS COLLECTION</span>
+    <h1>Everyday moments, beautifully scented.</h1>
+    <p>Discover fragrances and soaps for a little everyday luxury.</p>
+    <button type="button" (click)="storefront.browse()">Explore the collection <span aria-hidden="true">→</span></button>
+  </div>
 </div>

@@ -4,7 +4,7 @@ $mnx-card-width: 160px;
 $mnx-card-height: 337px;
 $mnx-card-mobile-width: 130px;
 
-$product-card-box-shadow: 0 $padding-02 $padding-08 rgba(0,0,0,0.50);
+$product-card-box-shadow: 0 3px 8px rgba(53,38,62,.15);
 
 :host ::ng-deep .p-card {
   width: $mnx-card-width;
@@ -18,6 +18,8 @@ $product-card-box-shadow: 0 $padding-02 $padding-08 rgba(0,0,0,0.50);
   min-height: $mnx-card-height;
   max-height: none;
   box-sizing: border-box;
+  border-radius: 14px;
+  background: #fffdf9;
   align-items: stretch;
   flex-direction: column;
   justify-content: flex-start;
@@ -74,18 +76,19 @@ $product-card-box-shadow: 0 $padding-02 $padding-08 rgba(0,0,0,0.50);
     display: block;
     font-size: $font-size-14;
     align-self: center;
-    min-height: $padding-32;
+    min-height: 44px;
     box-sizing: border-box;
     box-shadow: $product-card-box-shadow;
     transition: background 0.2s;
-    background: $color-blue-dark;
+    background: #49364f;
     font-weight: 600;
-    border-radius: $border-radius-06;
+    border-radius: 9px;
     &:hover,
     &:focus {
       color: $color-white;
-      background: $color-blue;
+      background: #68506d;
     }
+    &:focus-visible { outline: 2px solid #9a744e; outline-offset: 2px; }
   }
 }
 
@@ -104,6 +107,7 @@ $product-card-box-shadow: 0 $padding-02 $padding-08 rgba(0,0,0,0.50);
   .card-product-image {
     width: 100%;
     height: auto;
+    aspect-ratio: 1;
     display: block;
     max-width: 100%;
     max-height: 100%;

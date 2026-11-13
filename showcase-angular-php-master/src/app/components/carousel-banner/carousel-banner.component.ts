@@ -1,7 +1,8 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation, inject } from '@angular/core';
 import { NgOptimizedImage } from '@angular/common';
 import { Carousel } from 'primeng/carousel';
 import { PrimeTemplate } from 'primeng/api';
+import { StorefrontService } from '../../services/storefront.service';
 
 @Component({
   standalone: true,
@@ -12,6 +13,7 @@ import { PrimeTemplate } from 'primeng/api';
   encapsulation: ViewEncapsulation.None
 })
 export class CarouselBannerComponent {
+  readonly storefront = inject(StorefrontService);
   images = [
     '/angular/showcase-angular-php/assets/desktop/banner-images/perfume_banner_ad_01_desktop.png',
     '/angular/showcase-angular-php/assets/desktop/banner-images/perfume_banner_ad_02_desktop.png',

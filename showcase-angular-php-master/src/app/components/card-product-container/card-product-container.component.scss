@@ -46,9 +46,3 @@ $carousel-chevron-offset: $padding-08;
 .p-card {
   padding: $padding-08;
 }
-
-@media (prefers-color-scheme: dark) {
-  :host {
-    background: $mnx-cream-bg-dark;
-  }
-}

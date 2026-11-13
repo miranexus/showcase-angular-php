@@ -66,6 +66,48 @@ mnx-carousel-banner {
     line-height: 1.6;
   }
 
+  .hero-copy {
+    position: relative;
+    z-index: 11;
+    padding: clamp(24px, 4vw, 48px) 20px;
+    background: #f9f2e7;
+    color: #362b3b;
+    text-align: center;
+
+    > span {
+      color: #806442;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .16em;
+    }
+
+    h1 {
+      margin: 10px 0;
+      font-family: Georgia, serif;
+      font-size: clamp(28px, 3.2vw, 46px);
+      font-weight: 400;
+      line-height: 1.15;
+    }
+
+    p { margin: 0 0 20px; font-size: 15px; line-height: 1.5; }
+
+    button {
+      min-height: 44px;
+      padding: 11px 22px;
+      border: 1px solid #35263e;
+      border-radius: 24px;
+      background: #35263e;
+      color: #fff;
+      font: inherit;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    button:hover { background: #56415d; }
+    button:focus-visible { outline: 2px solid #8a6743; outline-offset: 3px; }
+  }
+
   @media (max-width: 1050px) {
     .carousel-scroll-overlay {
       @include carousel-scroll-overlay();

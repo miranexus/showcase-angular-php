@@ -23,14 +23,6 @@
       <div class="product-price">{{ product.priceCents / 100 | currency:'EUR' }}</div>
     }
     @if (showActions) {
-      <div class="product-review-stars">
-        <p-rating
-          class="product-rating"
-          [stars]="5"
-          [ngModel]="4"
-          [readonly]="true"
-        ></p-rating>
-      </div>
       <button pButton type="button" class="add-to-cart-btn" [disabled]="!product" (click)="product && storefront.add(product)" [attr.aria-label]="'Add ' + title + ' to cart'">Add to cart</button>
     }
   </p-card>

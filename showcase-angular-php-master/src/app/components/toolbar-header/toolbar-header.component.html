@@ -1,6 +1,6 @@
 <p-toolbar>
   <div class="p-toolbar-group-start">
-    <p-button icon="pi pi-bars" [rounded]="true" [text]="true" styleClass="hamburger-btn" />
+    <button type="button" class="hamburger-btn" aria-label="Toggle shop menu" [attr.aria-expanded]="mobileMenuOpen" (click)="mobileMenuOpen = !mobileMenuOpen; mobileSearchOpen = false"><i class="pi pi-bars" aria-hidden="true"></i></button>
     <div class="company-logo">
       <img ngSrc="assets/logos/small/miranexus-logo-small.svg" alt="company Logo" class="company-logo-img" width="40" height="40"/>
       <span>miranexus</span>
@@ -13,10 +13,20 @@
     </form>
   </div>
   <div class="p-toolbar-group-end">
-    <p-button icon="pi pi-search" [rounded]="true" [text]="true" styleClass="search-btn-mobile" ariaLabel="Toggle product search" [attr.aria-expanded]="mobileSearchOpen" (onClick)="mobileSearchOpen = !mobileSearchOpen" />
+    <button type="button" class="search-btn-mobile" aria-label="Toggle product search" [attr.aria-expanded]="mobileSearchOpen" (click)="mobileSearchOpen = !mobileSearchOpen; mobileMenuOpen = false"><i class="pi pi-search" aria-hidden="true"></i></button>
     <mnx-shopping-cart></mnx-shopping-cart>
   </div>
 </p-toolbar>
+<div class="cart-feedback" role="status" aria-live="polite" [class.visible]="store.cartMessage()">{{ store.cartMessage() }}</div>
+@if (mobileMenuOpen) {
+  <nav class="mobile-menu" aria-label="Shop categories">
+    <button type="button" (click)="browse()">All products</button>
+    <button type="button" (click)="browse('Perfume')">Perfume</button>
+    <button type="button" (click)="browse('Soap')">Soap</button>
+    <button type="button" (click)="browse('', 'featured')">Featured</button>
+    <button type="button" (click)="browse('', 'offers')">Special offers</button>
+  </nav>
+}
 @if (mobileSearchOpen) {
   <form class="mobile-search" (ngSubmit)="showResults()">
     <input type="search" pInputText name="mobileSearch" aria-label="Search products" placeholder="Search products..." [ngModel]="store.search()" (ngModelChange)="store.search.set($event)">

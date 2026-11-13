@@ -4,7 +4,7 @@
     <span class="cart-count">{{ store.count() }}</span>
   }
 </button>
-<p-dialog header="Your shopping cart" [(visible)]="visible" [modal]="true" [dismissableMask]="true" appendTo="body" styleClass="shopping-cart-dialog" [style]="{ width: 'min(94vw, 520px)' }">
+<p-dialog header="Your shopping cart" [visible]="visible" (visibleChange)="onVisibleChange($event)" [modal]="true" [dismissableMask]="true" appendTo="body" styleClass="shopping-cart-dialog" [style]="{ width: 'min(94vw, 520px)' }">
   @if (store.storageError()) {
     <p class="cart-warning" role="alert">Your cart could not be saved in this browser. Changes may not persist after you leave.</p>
   }

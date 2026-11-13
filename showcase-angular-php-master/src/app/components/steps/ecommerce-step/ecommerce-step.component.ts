@@ -25,8 +25,10 @@ export class EcommerceStepComponent implements OnInit {
   products: Product[] = [];
   perfumeCards: Product[] = [];
   soapCards: Product[] = [];
-  selectedCategory = '';
-  selectedCollection = 'all';
+  get selectedCategory(): string { return this.storefront.category(); }
+  set selectedCategory(value: string) { this.storefront.category.set(value); }
+  get selectedCollection(): string { return this.storefront.collection(); }
+  set selectedCollection(value: string) { this.storefront.collection.set(value); }
   loading = false;
   loadError = false;
 
@@ -64,10 +66,7 @@ export class EcommerceStepComponent implements OnInit {
         this.soapCards = products.filter(product => product.category === 'Soap');
         this.loading = false;
         if (this.storefront.scrollToResults) {
-          setTimeout(() => {
-            document.getElementById('catalogue-heading')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            this.storefront.scrollToResults = false;
-          });
+          setTimeout(() => this.storefront.showCatalogue());
         }
       },
       error: error => {

@@ -31,6 +31,13 @@ mnx-toolbar-header {
   .hamburger-btn {
     display: none;
     @include toolbar-icon-btn;
+    min-width: 44px;
+    min-height: 44px;
+    border: 0;
+    background: transparent;
+    color: #f5e7ee;
+    cursor: pointer;
+    .pi { font-size: 24px; }
     .p-button-icon {
       font-size: $font-size-24;
     }
@@ -70,11 +77,61 @@ mnx-toolbar-header {
     }
 
     button {
-      padding: $padding-08 $padding-12;
-      border: 0;
-      border-radius: $border-radius-06;
+      min-height: 44px;
+      padding: $padding-08 $padding-16;
+      border: 1px solid #d5b789;
+      border-radius: 24px;
+      background: transparent;
+      color: #fffaf3;
+      font-weight: 600;
       cursor: pointer;
     }
+
+    button:hover { background: rgba(255, 250, 243, .1); }
+  }
+
+  .mobile-menu {
+    display: grid;
+    padding: 8px 16px 16px;
+    background: #29203a;
+
+    button {
+      min-height: 44px;
+      padding: 10px 12px;
+      border: 0;
+      border-bottom: 1px solid rgba(255, 255, 255, .12);
+      background: transparent;
+      color: #fffaf3;
+      text-align: left;
+      font: inherit;
+      cursor: pointer;
+    }
+  }
+
+  .cart-feedback {
+    position: fixed;
+    z-index: 20;
+    top: 78px;
+    right: 16px;
+    max-width: min(320px, calc(100vw - 32px));
+    padding: 12px 16px;
+    border: 1px solid #e4d7c4;
+    border-radius: 12px;
+    background: #fffaf3;
+    box-shadow: 0 8px 30px rgba(38, 28, 45, .16);
+    color: #34283d;
+    font-size: 14px;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  .cart-feedback.visible { visibility: visible; }
+
+  button:focus-visible,
+  .p-button:focus-visible,
+  input:focus-visible {
+    outline: 2px solid #dbb878 !important;
+    outline-offset: 3px;
   }
 
   .company-logo {
@@ -102,64 +159,48 @@ mnx-toolbar-header {
 
   .search-bar {
     width: 100%;
-    filter: drop-shadow(0 0 0.2rem rgba(233,216,253,0.3));
     position: relative;
     max-width: $padding-315;
-    transition: filter 0.3s ease, transform 0.3s ease;
-
-    &:hover,
-    &:focus-within {
-      filter: drop-shadow(0 0 0.5rem rgba(233,216,253,0.5));
-      transform: scale(1.03);
-    }
 
     .search-icon {
       top: $percent-50;
-      color: #3a2747;
+      color: #786357;
       z-index: 1;
       position: absolute;
-      font-size: $font-size-13;
+      font-size: $font-size-14;
       transform: translateY(-$percent-50);
       pointer-events: none;
-      inset-inline-start: $padding-14;
-      -webkit-text-stroke: $padding-01 #3a2747;
+      inset-inline-start: $padding-16;
+    }
+  }
+
+  .search-bar input.p-inputtext,
+  .mobile-search input.p-inputtext {
+    width: 100%;
+    min-height: 44px;
+    box-sizing: border-box;
+    padding: $padding-09 $padding-16;
+    border: 1px solid #d9c6a9;
+    border-radius: $border-radius-32;
+    background: #fffaf3;
+    color: #34283d;
+    font-size: $font-size-14;
+    font-weight: 500;
+    box-shadow: none;
+
+    &:hover,
+    &:enabled:focus {
+      border-color: #b99563;
+      background: #fffdf9;
     }
 
-    input.p-inputtext.p-inputtext {
-      width: 100%;
-      color: color-mix(in srgb, var(--p-text-color) 120%, #000 20%);
-      border: $padding-03 solid transparent;
-      font-size: $font-size-13;
-      transition: box-shadow 0.3s ease, background 0.3s ease;
-      background:
-        linear-gradient(#faf9fd, #f7f7fb) padding-box,
-        $gradient-search-bar-border border-box;
-      font-weight: 600;
-      border-radius: $border-radius-32;
-      padding-block: $padding-09;
-      padding-inline-end: $padding-14;
-      padding-inline-start: $padding-32;
-      --p-focus-ring-color: transparent;
-      --p-inputtext-focus-ring-color: transparent;
-      --p-inputtext-focus-ring-shadow: none;
-      --p-inputtext-focus-border-color: transparent;
+    &::placeholder { color: #766b6c; opacity: 1; }
+  }
 
-      &:focus,
-      &:enabled:focus,
-      &:focus-visible {
-        outline: transparent none;
-        background:
-          linear-gradient(#faf9fd, #f7f7fb) padding-box,
-          $gradient-search-bar-border border-box;
-        box-shadow: none;
-        border-color: transparent;
-      }
-
-      &::placeholder {
-        color: var(--p-text-muted-color);
-        font-weight: 500;
-      }
-    }
+  .search-bar input.p-inputtext {
+    min-height: 38px;
+    padding-block: 6px;
+    padding-inline-start: 40px;
   }
 
   .cart-btn {
@@ -179,6 +220,13 @@ mnx-toolbar-header {
   .search-btn-mobile {
     display: none;
     @include toolbar-icon-btn;
+    min-width: 44px;
+    min-height: 44px;
+    border: 0;
+    background: transparent;
+    color: #f5e7ee;
+    cursor: pointer;
+    .pi { font-size: 24px; }
     .p-button-icon {
       font-size: $font-size-24;
       @include gradient-text($gradient-company-title);
@@ -194,6 +242,23 @@ mnx-toolbar-header {
   }
 
   @media (max-width: $breakpoint-sm) {
+    .p-toolbar {
+      flex-wrap: nowrap;
+      padding-inline: 8px;
+    }
+
+    .p-toolbar-group-start {
+      flex: 1 1 auto;
+      min-width: 0;
+      gap: 4px;
+    }
+
+    .p-toolbar-group-end {
+      display: flex;
+      flex: 0 0 auto;
+      gap: 0;
+    }
+
     .p-toolbar-group-center {
       display: none;
     }
@@ -212,11 +277,17 @@ mnx-toolbar-header {
     }
 
     .company-logo {
+      min-width: 0;
+      gap: 6px;
+
       i {
         font-size: $font-size-26;
       }
       span {
-        font-size: $font-size-18;
+        overflow: hidden;
+        font-size: clamp(14px, 5vw, 18px);
+        text-overflow: ellipsis;
+        white-space: nowrap;
       }
     }
   }

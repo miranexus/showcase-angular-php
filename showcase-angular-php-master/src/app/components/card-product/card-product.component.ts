@@ -3,8 +3,6 @@ import { Card } from 'primeng/card';
 import {PrimeTemplate} from 'primeng/api';
 import { CurrencyPipe, NgOptimizedImage} from '@angular/common';
 import { ButtonDirective} from 'primeng/button';
-import { Rating } from 'primeng/rating';
-import {FormsModule} from '@angular/forms';
 import { Product } from '../../models/product.model';
 import { StorefrontService } from '../../services/storefront.service';
 
@@ -13,7 +11,7 @@ import { StorefrontService } from '../../services/storefront.service';
   selector: 'mnx-card-product',
   templateUrl: './card-product.component.html',
   styleUrls: ['./card-product.component.scss'],
-  imports: [Card, PrimeTemplate, Rating, NgOptimizedImage, CurrencyPipe, ButtonDirective, FormsModule]
+  imports: [Card, PrimeTemplate, NgOptimizedImage, CurrencyPipe, ButtonDirective]
 })
 export class CardProductComponent {
   readonly storefront = inject(StorefrontService);

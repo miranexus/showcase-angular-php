@@ -1,8 +1,5 @@
 <div class="mnx-montserrat">
 
-  <!--This is commented out to test an app in isolation-->
-<!--  <mnx-toolbar-header></mnx-toolbar-header>-->
-
   <mnx-carousel-banner></mnx-carousel-banner>
   <mnx-toolbar-footer></mnx-toolbar-footer>
 
@@ -50,6 +47,12 @@
           </select>
         </label>
         </div>
+      </div>
+      <div class="catalogue-results">
+        <p aria-live="polite">{{ filteredProducts.length }} {{ filteredProducts.length === 1 ? 'product' : 'products' }}</p>
+        @if (selectedCategory || selectedCollection !== 'all' || storefront.search()) {
+          <button type="button" (click)="storefront.browse()">Clear filters and search</button>
+        }
       </div>
       <div class="catalogue-grid">
         @for (product of filteredProducts; track product.id) {

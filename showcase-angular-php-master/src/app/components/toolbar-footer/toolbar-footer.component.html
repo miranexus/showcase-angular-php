@@ -1,23 +1,13 @@
-<div class="carousel-scroll-overlay"></div>
-<p-carousel
-  class="footer-carousel"
-  [value]="links"
-  [circular]="true"
-  [numScroll]="1"
-  [numVisible]="3"
-  [responsiveOptions]="responsiveOptions"
-  [autoplayInterval]="4000"
-  [showIndicators]="false"
-  [showNavigators]="true"
->
-  <ng-template pTemplate="item" let-link>
-    <a [href]="link.url" class="footer-link">{{ link.title }}</a>
-  </ng-template>
-</p-carousel>
-<div class="footer-links">
-  @for (link of links; track link) {
-    <a [href]="link.url" class="footer-link">
-      {{ link.title }}
-    </a>
-  }
-</div>
+<nav class="collection-nav" aria-label="Browse collections">
+  <button type="button" class="nav-arrow" aria-label="Scroll collections left" (click)="scrollCollections(-1)">
+    <i class="pi pi-chevron-left" aria-hidden="true"></i>
+  </button>
+  <div #collectionLinks class="footer-links">
+    @for (link of links; track link.title) {
+      <button type="button" class="footer-link" (click)="storefront.browse(link.category, link.collection)">{{ link.title }}</button>
+    }
+  </div>
+  <button type="button" class="nav-arrow" aria-label="Scroll collections right" (click)="scrollCollections(1)">
+    <i class="pi pi-chevron-right" aria-hidden="true"></i>
+  </button>
+</nav>

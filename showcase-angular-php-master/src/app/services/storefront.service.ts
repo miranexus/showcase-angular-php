@@ -11,6 +11,10 @@ const CART_KEY = 'miranexus-showcase-cart';
 @Injectable({ providedIn: 'root' })
 export class StorefrontService {
   readonly search = signal('');
+  readonly category = signal('');
+  readonly collection = signal('all');
+  readonly cartMessage = signal('');
+  private messageTimer?: ReturnType<typeof setTimeout>;
   scrollToResults = false;
   private readonly cartState = signal<CartItem[]>([]);
   readonly cart = this.cartState.asReadonly();
@@ -50,6 +54,26 @@ export class StorefrontService {
     this.save(existing
       ? this.cart().map(item => item.product.id === product.id ? { product, quantity: item.quantity + 1 } : item)
       : [...this.cart(), { product, quantity: 1 }]);
+    const count = this.count();
+    this.cartMessage.set(`${product.title} added to your cart. ${count} ${count === 1 ? 'item' : 'items'} in cart.`);
+    clearTimeout(this.messageTimer);
+    this.messageTimer = setTimeout(() => this.cartMessage.set(''), 4000);
+  }
+
+  browse(category = '', collection = 'all'): void {
+    this.search.set('');
+    this.category.set(category);
+    this.collection.set(collection);
+    this.scrollToResults = true;
+    this.showCatalogue();
+  }
+
+  showCatalogue(): void {
+    const heading = document.getElementById('catalogue-heading');
+    if (!heading) return;
+    const reduceMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+    heading.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+    this.scrollToResults = false;
   }
 
   changeQuantity(id: number, delta: number): void {
